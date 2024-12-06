@@ -1,0 +1,127 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 1rem 0.5rem;
+    background: linear-gradient(90deg, #453386, #36356a);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+main.arcade-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.arcade-card {
+    background: #1f1f1f;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.arcade-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.arcade-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.arcade-card h2 {
+    color:  #ff00d9;
+    text-align: center;
+    margin: 1rem 0 0.5rem;
+}
+
+.arcade-card p {
+    text-align: center;
+    padding: 0 1rem 1rem;
+    font-size: 1rem;
+    color: #ddd;
+}
+
+footer {
+    text-align: center;
+    background-color: #453386;
+    color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+/* styles.css */
+
+/* Shared Styles */
+header, section, footer {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header p, section p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Arcade Gallery */
+.arcade-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Custom Card Styles */
+.arcade-card, .arcade-group {
+    background: #1f1f1f;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.arcade-card:hover, .arcade-group:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.arcade-card img, .arcade-group img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ff00d9;
+}
+
+.arcade-card h3, .arcade-group h3 {
+    color: #00ccff;
+    margin: 0.5rem 0;
+}
+
+.arcade-card p, .arcade-group p {
+    color: #ddd;
+    padding: 0.5rem 1rem;
+}
+
+.arcade-group p a {
+    color:#00ccff;
+    text-decoration: none;
+}
+
+.arcade-group p a:hover {
+    text-decoration: underline;
+}

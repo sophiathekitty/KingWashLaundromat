@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King Wash Laundromat - Earth Like Planet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="King Wash Logo">
+        </div>
+        <h1>King Wash Laundromat</h1>
+        <p>The crown jewel of cleanliness in Grindstone on the Earth Like Planet!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper">
+        <main>
+            <section id="about">
+                <h2>About King Wash</h2>
+                <p>Located in the heart of Grindstone, King Wash Laundromat has been serving the community for generations. From washing your everyday essentials to entertaining you with our backroom arcade, we bring cleanliness and fun to your busy life!</p>
+            </section>
+
+            <section id="services">
+                <h2>Our Services</h2>
+                <ul>
+                    <li>High-efficiency washing machines</li>
+                    <li>Large-capacity dryers</li>
+                    <li>Soap and supplies vending</li>
+                    <li>Comfortable seating area</li>
+                    <li>Self-service and drop-off options</li>
+                </ul>
+                <p>Got time to spare? Check out our arcade in the back for a spin on nostalgia!</p>
+            </section>
+
+            <section id="location">
+                <h2>Location</h2>
+                <p>King Wash Laundromat is conveniently located in the residential district of Grindstone, near charming diners and lively clubs.</p>
+                <p><em>Earth Like Planet</em>, coordinates: <a href="#" id="GPS" onclick="copyGPS('GPS:King Wash:12593.82:11777.22:-58311.1:#FF75C9F1:')">12593.82:11777.22:-58311.1</a></p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>Have questions or comments? Reach out to us:</p>
+                <ul>
+                    <li>Email: <a href="mailto:info@kingwash.elp">info@kingwash.elp</a></li>
+                    <li>Comm Terminal: <a href="tel:+1234567890">+123-456-7890</a></li>
+                    <li>Visit us in person!</li>
+                </ul>
+            </section>
+            <section id="arcade">
+                <h2>The Backroom Arcade</h2>
+                <p>Our arcade is a side project turned local treasure. Here are some of the games you can play:</p>
+                <ul>
+                    <li><strong>Woodgal Jr.</strong>: A chopping good time!</li>
+                    <li><strong>Dance Engineer Dance</strong>: Dance to the music.</li>
+                    <li><strong>Wold 3D</strong>: Explore a 3d world!</li>
+                    <li>And more!</li>
+                </ul>
+                <a href="arcade/" class="button">Learn More About the Arcade</a>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Photo Gallery</h3>
+            <img src="photo1.jpg" alt="Washing machines">
+            <img src="photo2.jpg" alt="Dryers and ATM">
+            <img src="photo3.jpg" alt="Interior of King Wash">
+            <img src="photo5.jpg" alt="Exterior of King Wash">
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2077 King Wash Laundromat. Powered by Grindstone Enterprises.</p>
+    </footer>
+    <script>
+        function copyGPS(gps) {
+            // Check if the Clipboard API is available
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(gps)
+                    .then(() => {
+                        alert('Copied to clipboard!');
+                    })
+                    .catch(err => {
+                        console.error('Failed to copy text: ', err);
+                    });
+            } else {
+                // Fallback for unsupported browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = gps;
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    alert('Copied to clipboard!');
+                } catch (err) {
+                    console.error('Fallback failed to copy text: ', err);
+                }
+                document.body.removeChild(textarea);
+            }
+        }
+    </script>
+</body>
+</html>

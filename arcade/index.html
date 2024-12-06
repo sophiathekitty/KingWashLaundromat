@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King Wash Arcade - Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>King Wash Arcade</h1>
+        <p>What started as a simple laundromat has grown into a thriving retro arcade, thanks to our new manager's passion for game development! Step into the backroom and discover original creations alongside some incredible cabinets from other talented builders. Play hard, fold fast!</p>
+    </header>
+
+    <section>
+        <h2>Custom Arcade Cabinets</h2>
+        <p>These one-of-a-kind games were designed and built in-house! Click a cabinet to learn more or download it from the Steam Workshop.</p>
+        <main class="arcade-gallery">
+            <div class="arcade-card" onclick="openSteam('https://steamcommunity.com/sharedfiles/filedetails/?id=3142471782')">
+                <img src="woodgal-jr.png" alt="Woodgal Jr.">
+                <h3>Woodgal Jr.</h3>
+                <p>A fast-paced tree-chopping game. Swap sides to avoid branches!</p>
+            </div>
+            <div class="arcade-card" onclick="openSteam('https://steamcommunity.com/sharedfiles/filedetails/?id=3142472800')">
+                <img src="dance-engineer-dance.png" alt="Dance Engineer Dance">
+                <h3>Dance Engineer Dance</h3>
+                <p>Test your rhythm in this DDR-inspired cabinet!</p>
+            </div>
+            <div class="arcade-card" onclick="openSteam('https://steamcommunity.com/sharedfiles/filedetails/?id=3142474001')">
+                <img src="air-hockey.png" alt="Air Hockey">
+                <h3>Air Hockey</h3>
+                <p>Classic air hockey fun, now digital!</p>
+            </div>
+            <div class="arcade-card" onclick="openSteam('https://steamcommunity.com/sharedfiles/filedetails/?id=3159105570')">
+                <img src="flappy-bird.png" alt="Flappy Bird">
+                <h3>Flappy Bird</h3>
+                <p>Flap your way through obstacles in this challenging remake.</p>
+            </div>
+            <div class="arcade-card" onclick="openSteam('https://steamcommunity.com/sharedfiles/filedetails/?id=3159106410')">
+                <img src="space-invaders.png" alt="Space Invaders">
+                <h3>Space Invaders</h3>
+                <p>Defend Earth in this tribute to the arcade classic.</p>
+            </div>
+            <div class="arcade-card" onclick="openSteam('https://steamcommunity.com/sharedfiles/filedetails/?id=3159107075')">
+                <img src="breakout.png" alt="Breakout">
+                <h3>Breakout</h3>
+                <p>Smash bricks and score big in this timeless game.</p>
+            </div>
+            <div class="arcade-card" onclick="openSteam('https://steamcommunity.com/sharedfiles/filedetails/?id=3173071227')">
+                <img src="wolf-3d.png" alt="Wolf 3D">
+                <h3>Wolf 3D</h3>
+                <p>A retro 3D shooter. It's like Wolfenstein but voxelized!</p>
+            </div>
+        </main>
+    </section>
+
+    <section>
+        <h2>Community Arcade Cabinets</h2>
+        <p>We’re proud to showcase some incredible cabinets from the Steam Workshop that helped inspire our designs. These creations are a testament to the creativity of the Space Engineers community!</p>
+        <div class="arcade-gallery">
+            <div class="arcade-group">
+                <img src="kelevra-tetris-snake.png" alt="Kelevra's Tetris and Snake cabinets">
+                <h3>Kelevra</h3>
+                <p>
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2883502340" target="_blank">Tetris</a> | 
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2906631630" target="_blank">Snake</a>
+                </p>
+            </div>
+            <div class="arcade-group">
+                <img src="jasba-titan-flug.png" alt="Jasba's Titan Flug cabinet">
+                <h3>Jasba</h3>
+                <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3048874542" target="_blank">Titan Flug</a></p>
+            </div>
+            <div class="arcade-group">
+                <img src="avaness-cabinets.png" alt="Avaness's Pong, Tron, and Snake cabinets">
+                <h3>Avaness</h3>
+                <p>
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2432950269" target="_blank">Pong</a> | 
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2432952109" target="_blank">Tron</a> | 
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2432951311" target="_blank">Snake</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2077 King Wash Arcade. Powered by Grindstone Enterprises.</p>
+    </footer>
+
+    <script>
+        function openSteam(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
