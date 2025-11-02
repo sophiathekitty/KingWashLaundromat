@@ -69,7 +69,7 @@ header {
 }
 
 .header-content {
-    max-width: 1200px;
+    max-width: 95%;
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -80,7 +80,181 @@ header {
 .header-text {
     flex: 1;
     text-align: center;
-    max-width: 100%; /* Full width now, pamphlet on left */
+    max-width: 100%; /* Full width now, pamphlet and loyalty on sides */
+}
+
+/* Header Loyalty Scoreboard */
+.header-loyalty {
+    right: 0;
+    top: 0;
+    width: 220px;
+    z-index: 90;
+}
+
+.loyalty-scoreboard {
+    background: linear-gradient(145deg, 
+        rgba(0, 0, 0, 0.8) 0%, 
+        rgba(25, 25, 25, 0.9) 100%);
+    border: 1px solid var(--neon-cyan);
+    border-radius: 12px;
+    padding: 1rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.loyalty-scoreboard:hover {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 20px rgba(255, 0, 217, 0.3);
+}
+
+.loyalty-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.points-display, .streak-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.points-icon, .streak-icon {
+    font-size: 1.2rem;
+}
+
+.points-value, .streak-value {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--neon-cyan);
+    text-shadow: var(--neon-glow) var(--neon-cyan);
+    font-family: 'Orbitron', monospace;
+}
+
+.points-label, .streak-label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.loyalty-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(145deg, 
+        rgba(0, 0, 0, 0.95) 0%, 
+        rgba(25, 25, 25, 0.95) 100%);
+    border: 1px solid var(--neon-cyan);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.loyalty-scoreboard:hover .loyalty-dropdown,
+.loyalty-scoreboard.active .loyalty-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.loyalty-dropdown h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--neon-pink);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.recent-rewards {
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.reward-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+}
+
+.reward-item:last-child {
+    border-bottom: none;
+}
+
+.reward-name {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.reward-points {
+    color: var(--neon-cyan);
+    font-weight: 600;
+}
+
+.daily-checkin-btn {
+    width: 100%;
+    padding: 0.5rem;
+    background: linear-gradient(135deg, var(--neon-cyan), #00d4ff);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+.daily-checkin-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+}
+
+.daily-checkin-btn:disabled {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Daily Specials Section */
+.daily-specials {
+    flex: 1;
+}
+
+.daily-specials h2 {
+    color: var(--neon-pink);
+    text-shadow: var(--neon-glow) var(--neon-pink);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Mobile responsive fixes */
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* Carousel container fixes for mobile */
+.carousel-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 /* Text wrapping effect for larger screens */
@@ -1256,11 +1430,21 @@ section p {
         max-width: 100%;
         padding-left: 0;
         text-align: center;
+        order: 1;
     }
     
     .header-text p {
         margin-left: 0;
         text-align: center;
+    }
+    
+    .header-loyalty {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+        max-width: 300px;
+        order: 3;
     }
     
     .king-wash-container {
@@ -1270,9 +1454,10 @@ section p {
         bottom: auto;
         width: auto;
         overflow: visible;
-        margin: 20px auto 0;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
+        order: 2;
     }
     
     .king-wash-pamphlet {
@@ -1299,6 +1484,17 @@ section p {
     
     .pamphlet-header h3 {
         font-size: 20px;
+    }
+    
+    /* Mobile carousel fixes */
+    .carousel-container {
+        width: calc(100vw - 2rem);
+        margin: 0 1rem;
+    }
+    
+    .carousel-wrapper {
+        width: 100%;
+        overflow: hidden;
     }
 }
 
