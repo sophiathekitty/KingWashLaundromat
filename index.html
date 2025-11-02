@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>King Wash Laundromat - Earth Like Planet</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="King Wash Logo">
+            <img src="img/logo.png" alt="King Wash Logo">
         </div>
         <h1>King Wash Laundromat</h1>
         <p>The crown jewel of cleanliness in Grindstone on the Earth Like Planet!</p>
@@ -73,17 +73,69 @@
 
         <aside class="sidebar">
             <h3>Photo Gallery</h3>
-            <img src="photo1.jpg" alt="Washing machines">
-            <img src="photo2.jpg" alt="Dryers and ATM">
-            <img src="photo3.jpg" alt="Interior of King Wash">
-            <img src="photo5.jpg" alt="Exterior of King Wash">
+            <img src="img/photo1.jpg" alt="Washing machines">
+            <img src="img/photo2.jpg" alt="Dryers and ATM">
+            <img src="img/photo3.jpg" alt="Interior of King Wash">
+            <img src="img/photo5.jpg" alt="Exterior of King Wash">
         </aside>
     </div>
 
     <footer>
-        <p>&copy; 2077 King Wash Laundromat. Powered by Grindstone Enterprises.</p>
+        <p>&copy; 2077 King Wash Laundromat. Powered by <span class="glitch-text" id="company-name">Grindstone Enterprises</span>.</p>
     </footer>
     <script>
+        // Glitch effect for company name
+        const companyName = document.getElementById('company-name');
+        let isGlitched = false;
+        
+        companyName.addEventListener('mouseenter', function() {
+            if (!isGlitched) {
+                this.classList.add('glitching');
+                
+                setTimeout(() => {
+                    this.textContent = 'Null Systems';
+                    this.style.color = '#ff4444';
+                    this.classList.remove('glitching');
+                    isGlitched = true;
+                    
+                    // Make it a link
+                    const link = document.createElement('a');
+                    link.href = 'https://sophiathekitty.github.io/GridDB/index.html';
+                    link.target = '_blank';
+                    link.className = 'glitch-text';
+                    link.style.color = '#ff4444';
+                    link.style.textDecoration = 'none';
+                    link.textContent = 'Null Systems';
+                    
+                    this.parentNode.replaceChild(link, this);
+                }, 500);
+            }
+        });
+        
+        companyName.addEventListener('touchstart', function() {
+            // Same functionality for mobile
+            if (!isGlitched) {
+                this.classList.add('glitching');
+                
+                setTimeout(() => {
+                    this.textContent = 'Null Systems';
+                    this.style.color = '#ff4444';
+                    this.classList.remove('glitching');
+                    isGlitched = true;
+                    
+                    const link = document.createElement('a');
+                    link.href = 'https://sophiathekitty.github.io/GridDB/index.html';
+                    link.target = '_blank';
+                    link.className = 'glitch-text';
+                    link.style.color = '#ff4444';
+                    link.style.textDecoration = 'none';
+                    link.textContent = 'Null Systems';
+                    
+                    this.parentNode.replaceChild(link, this);
+                }, 500);
+            }
+        });
+
         function copyGPS(gps) {
             // Check if the Clipboard API is available
             if (navigator.clipboard && navigator.clipboard.writeText) {
