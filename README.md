@@ -195,3 +195,43 @@ Backgrounds and UI Graphics:
 * [Make Your Own Raycaster Part 1](https://youtu.be/gYRrGTC7GtA?si=JlvFfnrZOTlEYr-i)
 * [Make Your Own Raycaster Part 2](https://youtu.be/PC1RaETIx3Y?si=1UbWhBpKVFv5J74T)
 * [Make Your Own Raycaster Part 3](https://youtu.be/w0Bm4IA-Ii8?si=IZkm6Q6MN7vZl3V_)
+
+### Bike Racerr
+
+Resources Used:
+background: https://www.spriters-resource.com/snes/kawasakisuperbikechallenge/sheet/172931/
+sprites: https://www.spriters-resource.com/master_system/hangon/
+
+
+## Sounds Used
+
+Sound Sources:
+
+AirHockeyTable: Air hockey table: fan_reso_1.xwm
+PuckStrike: Puck striking something: puck1.xwm
+GameDeath: Arcade death sound effect: death.xwm
+RoundEnd: Arcade Round End Celebration: round_end.xwm
+WoodChop: Woodgal chopping a tree: chop1.xwm, crack09.xwm, impactwood14.xwm
+
+fan_reso_1: https://opengameart.org/content/13-ambient-machine-sounds
+crack09, impactwood14: https://opengameart.org/content/35-wooden-crackshitsdestructions
+death, round_end: https://opengameart.org/content/oldschool-win-and-die-jump-and-run-sounds
+puck1, chop1: https://opengameart.org/content/random-sfx
+
+Flappy Bird Assets: https://github.com/samuelcust/flappy-bird-assets
+FlappyWing: Flappy Bird Wing: wing.xwm
+FlappyDie: Flappy Bird Die: die.xwm
+FlappyHit: Flappy Bird Hit: hit.xwm
+FlappyPoint: Flappy Bird Point: point.xwm
+FlappySwoosh: Flappy Bird Swoosh: swoosh.xwm
+
+WolfGold: Wolf 3D Gold: gold.xwm
+WolfHit: Wolf 3D Skeleton Hit: hit_2.xwm
+WolfDoor: Wolf 3d Door: doorwood_close.xwm
+WolfKnife: Wolf 3d Knife Slash: sword_sheath_1.xwm
+WolfGun: Wolf 3d Gun Shot: pop_gun.xwm
+WolfPain: Wolf 3d Pain Grunt: paind.xwm
+
+sword_sheath_1, gold, hit_2,doorwood_close: jute-dh-rpgsounds?
+paind: https://opengameart.org/content/15-monster-gruntpaindeath-sounds
+pop_gun: https://opengameart.org/content/41-random-sound-effects
