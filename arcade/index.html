@@ -235,8 +235,19 @@
                 this.autoScrollInterval = null;
                 this.userInteractionTimeout = null;
                 this.isTransitioning = false;
+                this.isMobile = this.detectMobile();
                 
                 this.init();
+            }
+            
+            detectMobile() {
+                // Detect mobile devices
+                const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+                const isMobileUA = /android|avantgo|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(userAgent);
+                const isMobileScreen = window.innerWidth <= 768;
+                const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+                
+                return isMobileUA || (isMobileScreen && isTouchDevice);
             }
             
             getVisibleCards() {
@@ -249,13 +260,33 @@
             }
             
             init() {
-                this.setupInfiniteScroll();
-                this.setupEventListeners();
-                this.updateCarousel();
-                this.startAutoScroll();
+                if (this.isMobile) {
+                    this.setupMobileCarousel();
+                } else {
+                    this.setupInfiniteScroll();
+                    this.updateCarousel();
+                    this.startAutoScroll();
+                }
                 
-                // Add click handlers to cards
+                this.setupEventListeners();
                 this.updateClickHandlers();
+            }
+            
+            setupMobileCarousel() {
+                // Add mobile classes to disable transitions and enable static scrolling
+                document.body.classList.add('mobile-no-transitions');
+                this.carousel.closest('.carousel-container').classList.add('mobile-static-carousel');
+                
+                // Reset carousel to show original cards only
+                this.carousel.innerHTML = '';
+                this.originalCards.forEach(card => {
+                    this.carousel.appendChild(card);
+                });
+                
+                this.cards = Array.from(this.carousel.querySelectorAll('.arcade-card'));
+                
+                // Disable auto-scroll on mobile
+                this.isAutoScrolling = false;
             }
             
             setupInfiniteScroll() {
@@ -310,10 +341,22 @@
             }
             
             setupEventListeners() {
+                if (this.isMobile) {
+                    // Simplified mobile event listeners
+                    this.carousel.addEventListener('mouseenter', () => this.handleUserInteraction());
+                    this.carousel.addEventListener('mouseleave', () => this.resumeAutoScroll());
+                    
+                    // Touch events for mobile (but no auto-scroll)
+                    this.carousel.addEventListener('touchstart', () => this.handleUserInteraction());
+                    
+                    return;
+                }
+                
+                // Desktop event listeners with full functionality
                 this.prevBtn.addEventListener('click', () => this.prevSlide());
                 this.nextBtn.addEventListener('click', () => this.nextSlide());
                 
-                // Touch/drag support
+                // Touch/drag support for desktop
                 let startX = 0;
                 let isDragging = false;
                 
@@ -356,7 +399,7 @@
             }
             
             nextSlide() {
-                if (this.isTransitioning) return;
+                if (this.isMobile || this.isTransitioning) return;
                 this.isTransitioning = true;
                 
                 this.currentIndex++;
@@ -382,7 +425,7 @@
             }
             
             prevSlide() {
-                if (this.isTransitioning) return;
+                if (this.isMobile || this.isTransitioning) return;
                 this.isTransitioning = true;
                 
                 this.currentIndex--;
@@ -408,13 +451,15 @@
             }
             
             updateCarousel() {
-                if (this.cards.length === 0) return;
+                if (this.isMobile || this.cards.length === 0) return;
                 const cardWidth = this.cards[0].offsetWidth + 24; // Include gap
                 const offset = -this.currentIndex * cardWidth;
                 this.carousel.style.transform = `translateX(${offset}px)`;
             }
             
             handleUserInteraction() {
+                if (this.isMobile) return; // No auto-scroll on mobile
+                
                 this.isAutoScrolling = false;
                 clearInterval(this.autoScrollInterval);
                 clearTimeout(this.userInteractionTimeout);
@@ -425,11 +470,15 @@
             }
             
             resumeAutoScroll() {
+                if (this.isMobile) return; // No auto-scroll on mobile
+                
                 clearTimeout(this.userInteractionTimeout);
                 this.startAutoScroll();
             }
             
             startAutoScroll() {
+                if (this.isMobile) return; // No auto-scroll on mobile
+                
                 this.isAutoScrolling = true;
                 this.autoScrollInterval = setInterval(() => {
                     if (this.isAutoScrolling) {
