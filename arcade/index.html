@@ -69,7 +69,18 @@
         <div class="featured-cabinet">
             <h2>Featured Cabinet</h2>
             <div class="featured-card" id="featured-card">
-                <img src="img/woodgal-jr.png" alt="Featured Game" id="featured-image">
+                <div class="featured-gallery">
+                    <div class="hero-image-container">
+                        <img src="img/woodgal-jr.png" alt="Featured Game" id="featured-hero-image" class="hero-image">
+                        <div class="rare-badge" id="rare-badge" style="display: none;">
+                            <span class="rare-text">RARE</span>
+                            <div class="rare-sparkles"></div>
+                        </div>
+                    </div>
+                    <div class="thumbnail-gallery" id="thumbnail-gallery">
+                        <!-- Thumbnails will be populated by JavaScript -->
+                    </div>
+                </div>
                 <div class="featured-info">
                     <h3 id="featured-title">Woodgal Jr.</h3>
                     <p id="featured-description">A fast-paced tree-chopping game. Swap sides to avoid branches!</p>
@@ -88,6 +99,7 @@
             </div>
         </div>
     </section>
+
 
     <section>
         <h2>Custom Arcade Cabinets</h2>
@@ -171,54 +183,86 @@
         </div>
     </section>
 
+    <!-- Arcade Gallery Section -->
+    <section class="arcade-gallery-section">
+        <h2>Arcade Gallery</h2>
+        <p>Take a look behind the scenes at our arcade space and entrance area!</p>
+        
+        <div class="arcade-photos" id="arcade-photos">
+            <!-- Photos will be randomly populated by JavaScript -->
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2077 Arcade Paradise. Powered by <span class="glitch-text" id="company-name">Grindstone Enterprises</span>.</p>
     </footer>
 
     <script>
-        // Arcade cabinet data
+        // Arcade cabinet data with image galleries
         const arcadeCabinets = [
             {
                 title: "Woodgal Jr.",
                 description: "A fast-paced tree-chopping game. Swap sides to avoid branches!",
                 image: "img/woodgal-jr.png",
-                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3142471782"
+                thumbnails: ["img/woodgal-jr-1.png", "img/woodgal-jr-2.png", "img/woodgal-jr-3.png"],
+                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3142471782",
+                rare: false
             },
             {
                 title: "Dance Engineer Dance",
                 description: "Test your rhythm in this DDR-inspired cabinet!",
                 image: "img/dance-engineer-dance.png",
-                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3142472800"
+                thumbnails: ["img/dance-engineer-dance-1.png", "img/dance-engineer-dance-2.png", "img/dance-engineer-dance-3.png"],
+                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3142472800",
+                rare: false
             },
             {
                 title: "Air Hockey",
                 description: "Classic air hockey fun, now digital!",
                 image: "img/air-hockey.png",
-                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3142474001"
+                thumbnails: ["img/air-hockey-1.png", "img/air-hockey-2.png", "img/air-hockey-3.png"],
+                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3142474001",
+                rare: false
             },
             {
                 title: "Flappy Bird",
                 description: "Flap your way through obstacles in this challenging remake.",
                 image: "img/flappy-bird.png",
-                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3159105570"
+                thumbnails: ["img/flappy-bird-1.png", "img/flappy-bird-2.png", "img/flappy-bird-3.png"],
+                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3159105570",
+                rare: false
             },
             {
                 title: "Space Invaders",
                 description: "Defend Earth in this tribute to the arcade classic.",
                 image: "img/space-invaders.png",
-                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3159106410"
+                thumbnails: ["img/space-invaders-1.png", "img/space-invaders-2.png", "img/space-invaders-3.png"],
+                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3159106410",
+                rare: false
             },
             {
                 title: "Breakout",
                 description: "Smash bricks and score big in this timeless game.",
                 image: "img/breakout.png",
-                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3159107075"
+                thumbnails: ["img/breakout-1.png", "img/breakout-2.png", "img/breakout-3.png"],
+                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3159107075",
+                rare: false
             },
             {
                 title: "Wolf 3D",
                 description: "A retro 3D shooter. It's like Wolfenstein but voxelized!",
                 image: "img/wolf-3d.png",
-                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3173071227"
+                thumbnails: ["img/wolf-3d-1.png", "img/wolf-3d-2.png", "img/wolf-3d-3.png"],
+                steamUrl: "https://steamcommunity.com/sharedfiles/filedetails/?id=3173071227",
+                rare: false
+            },
+            {
+                title: "Bike Racer",
+                description: "An experimental racing cabinet with a physical tilting bike controller. Drive down the road, lean to turn, and try to stay on track! Features other AI bikes but no collision or scoring - this prototype focuses on the unique controller experience.",
+                image: "img/bike-racer.png",
+                thumbnails: ["img/bike-racer-1.png", "img/bike-racer-2.png", "img/bike-racer-3.png"],
+                steamUrl: null, // No Steam URL for rare prototype
+                rare: true
             }
         ];
 
@@ -488,13 +532,16 @@
             }
         }
 
-        // Featured cabinet functionality
+        // Featured cabinet functionality with image gallery
         class FeaturedCabinet {
             constructor() {
                 this.currentIndex = Math.floor(Math.random() * arcadeCabinets.length);
+                this.currentImageIndex = 0;
                 this.rotationInterval = null;
+                this.imageRotationInterval = null;
                 this.isUserActive = true;
                 this.inactivityTimeout = null;
+                this.imageInactivityTimeout = null;
                 
                 this.init();
             }
@@ -512,11 +559,158 @@
             
             updateFeaturedCabinet() {
                 const cabinet = arcadeCabinets[this.currentIndex];
+                this.currentImageIndex = 0; // Reset to first image
                 
-                document.getElementById('featured-image').src = cabinet.image;
+                // Create array of all images for this cabinet
+                this.allImages = [cabinet.image, ...(cabinet.thumbnails || [])];
+                
+                // Update hero image
+                this.updateHeroImage();
+                
+                // Update info
                 document.getElementById('featured-title').textContent = cabinet.title;
                 document.getElementById('featured-description').textContent = cabinet.description;
-                document.getElementById('featured-button').onclick = () => openSteam(cabinet.steamUrl);
+                
+                // Update button
+                const button = document.getElementById('featured-button');
+                if (cabinet.steamUrl) {
+                    button.textContent = 'Play Now';
+                    button.onclick = () => openSteam(cabinet.steamUrl);
+                    button.style.display = 'block';
+                    button.style.opacity = '1';
+                    button.style.cursor = 'pointer';
+                } else {
+                    button.textContent = 'Prototype Only';
+                    button.onclick = null;
+                    button.style.opacity = '0.6';
+                    button.style.cursor = 'not-allowed';
+                }
+                
+                // Show/hide rare badge
+                const rareBadge = document.getElementById('rare-badge');
+                if (cabinet.rare) {
+                    rareBadge.style.display = 'block';
+                    this.animateRareBadge();
+                } else {
+                    rareBadge.style.display = 'none';
+                }
+                
+                // Update thumbnail gallery
+                this.updateThumbnailGallery();
+                
+                // Start image auto-cycling
+                this.startImageCycling();
+            }
+            
+            updateHeroImage() {
+                const cabinet = arcadeCabinets[this.currentIndex];
+                const heroImage = document.getElementById('featured-hero-image');
+                const currentImageSrc = this.allImages[this.currentImageIndex];
+                
+                // Fade out
+                heroImage.style.opacity = '0.7';
+                
+                setTimeout(() => {
+                    heroImage.src = currentImageSrc;
+                    heroImage.alt = `${cabinet.title} - Image ${this.currentImageIndex + 1}`;
+                    
+                    // Fade in
+                    heroImage.style.opacity = '1';
+                }, 200);
+            }
+            
+            updateThumbnailGallery() {
+                const cabinet = arcadeCabinets[this.currentIndex];
+                const thumbnailGallery = document.getElementById('thumbnail-gallery');
+                thumbnailGallery.innerHTML = '';
+                
+                // Add all images as thumbnails
+                this.allImages.forEach((imageSrc, index) => {
+                    const thumb = this.createThumbnail(imageSrc, `${cabinet.title} view ${index + 1}`, index === this.currentImageIndex);
+                    thumb.setAttribute('data-image-index', index);
+                    thumbnailGallery.appendChild(thumb);
+                });
+            }
+            
+            createThumbnail(src, alt, isActive = false) {
+                const thumb = document.createElement('div');
+                thumb.className = `thumbnail ${isActive ? 'active' : ''}`;
+                
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = alt;
+                
+                thumb.appendChild(img);
+                
+                // Add click handler to select this image
+                thumb.addEventListener('click', () => {
+                    const imageIndex = parseInt(thumb.getAttribute('data-image-index'));
+                    this.selectImage(imageIndex);
+                    this.handleUserActivity(); // Reset inactivity timer
+                    this.handleImageInteraction(); // Reset image cycling timer
+                });
+                
+                return thumb;
+            }
+            
+            selectImage(imageIndex) {
+                if (imageIndex !== this.currentImageIndex) {
+                    this.currentImageIndex = imageIndex;
+                    this.updateHeroImage();
+                    this.setActiveThumbnail(imageIndex);
+                }
+            }
+            
+            setActiveThumbnail(activeIndex) {
+                // Remove active class from all thumbnails
+                document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
+                    thumb.classList.toggle('active', index === activeIndex);
+                });
+            }
+            
+            cycleToNextImage() {
+                if (this.allImages.length > 1) {
+                    this.currentImageIndex = (this.currentImageIndex + 1) % this.allImages.length;
+                    this.updateHeroImage();
+                    this.setActiveThumbnail(this.currentImageIndex);
+                }
+            }
+            
+            startImageCycling() {
+                this.stopImageCycling();
+                
+                // Only start cycling if there are multiple images
+                if (this.allImages.length > 1) {
+                    this.imageInactivityTimeout = setTimeout(() => {
+                        this.imageRotationInterval = setInterval(() => {
+                            this.cycleToNextImage();
+                        }, 3000); // Cycle every 3 seconds
+                    }, 60000); // Start cycling after 1 minute of inactivity
+                }
+            }
+            
+            stopImageCycling() {
+                clearTimeout(this.imageInactivityTimeout);
+                clearInterval(this.imageRotationInterval);
+            }
+            
+            handleImageInteraction() {
+                this.stopImageCycling();
+                this.startImageCycling();
+            }
+            
+            animateRareBadge() {
+                const badge = document.getElementById('rare-badge');
+                const sparkles = badge.querySelector('.rare-sparkles');
+                
+                // Animate sparkles
+                sparkles.innerHTML = '';
+                for (let i = 0; i < 6; i++) {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.style.animationDelay = `${Math.random() * 2}s`;
+                    sparkles.appendChild(sparkle);
+                }
             }
             
             rotateFeatured() {
@@ -1089,10 +1283,88 @@
             scrollTimer = setTimeout(triggerScrollSparkle, 100);
         });
         
-        // Initialize carousel, featured cabinet, and loyalty system when page loads
+        // Arcade Gallery functionality
+        class ArcadeGallery {
+            constructor() {
+                this.arcadePhotos = [
+                    {
+                        image: "img/arcade-photo.png",
+                        title: "Main Arcade Floor",
+                        description: "The heart of our retro gaming paradise"
+                    },
+                    {
+                        image: "img/arcade-photo-2.png",
+                        title: "Gaming Zone",
+                        description: "Where the magic happens"
+                    },
+                    {
+                        image: "img/arcade-photo-office.png",
+                        title: "Development Office",
+                        description: "Behind the scenes workspace"
+                    },
+                    {
+                        image: "img/arcade-storage-area.png",
+                        title: "Storage Area",
+                        description: "Keeping everything organized"
+                    },
+                    {
+                        image: "img/arcade-entrance.png",
+                        title: "Arcade Entrance",
+                        description: "Welcome to the gaming dimension"
+                    },
+                    {
+                        image: "img/arcade-entrance-1.png",
+                        title: "Entrance Detail",
+                        description: "Step into the neon-lit gaming world"
+                    }
+                ];
+                
+                this.init();
+            }
+            
+            init() {
+                this.populateGallery();
+            }
+            
+            populateGallery() {
+                const container = document.getElementById('arcade-photos');
+                if (!container) return;
+                
+                // Shuffle and select 3 random photos
+                const shuffled = [...this.arcadePhotos].sort(() => 0.5 - Math.random());
+                const selectedPhotos = shuffled.slice(0, 3);
+                
+                // Clear container
+                container.innerHTML = '';
+                
+                // Create photo cards
+                selectedPhotos.forEach(photo => {
+                    const photoCard = this.createPhotoCard(photo);
+                    container.appendChild(photoCard);
+                });
+            }
+            
+            createPhotoCard(photo) {
+                const card = document.createElement('div');
+                card.className = 'arcade-photo-card';
+                
+                card.innerHTML = `
+                    <img src="${photo.image}" alt="${photo.title}">
+                    <div class="photo-overlay">
+                        <h3>${photo.title}</h3>
+                        <p>${photo.description}</p>
+                    </div>
+                `;
+                
+                return card;
+            }
+        }
+
+        // Initialize carousel, featured cabinet, arcade gallery, and loyalty system when page loads
         window.addEventListener('load', () => {
             new ArcadeCarousel();
             new FeaturedCabinet();
+            new ArcadeGallery();
             new LoyaltySystem();
         });
     </script>
