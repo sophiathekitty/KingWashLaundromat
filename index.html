@@ -3,87 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King Wash Laundromat - Earth Like Planet</title>
+    <title>King Wash Laundromat - Premium Laundry Services | Grindstone Colony</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="img/logo.png" alt="King Wash Logo">
+    <!-- Fixed Arcade Banner -->
+    <div class="arcade-banner">
+        <div class="arcade-banner-content">
+            <div class="arcade-icon">🕹️</div>
+            <div class="arcade-text">
+                <span class="arcade-title">Retro Arcade</span>
+                <span class="arcade-subtitle">While you wait</span>
+            </div>
+            <a href="arcade/index.html" class="arcade-button">Play Now</a>
         </div>
-        <h1>King Wash Laundromat</h1>
-        <p>The crown jewel of cleanliness in Grindstone on the Earth Like Planet!</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#location">Location</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="content-wrapper">
-        <main>
-            <section id="about">
-                <h2>About King Wash</h2>
-                <p>Located in the heart of Grindstone, King Wash Laundromat has been serving the community for generations. From washing your everyday essentials to entertaining you with our backroom arcade, we bring cleanliness and fun to your busy life!</p>
-            </section>
-
-            <section id="services">
-                <h2>Our Services</h2>
-                <ul>
-                    <li>High-efficiency washing machines</li>
-                    <li>Large-capacity dryers</li>
-                    <li>Soap and supplies vending</li>
-                    <li>Comfortable seating area</li>
-                    <li>Self-service and drop-off options</li>
-                </ul>
-                <p>Got time to spare? Check out our arcade in the back for a spin on nostalgia!</p>
-            </section>
-
-            <section id="location">
-                <h2>Location</h2>
-                <p>King Wash Laundromat is conveniently located in the residential district of Grindstone, near charming diners and lively clubs.</p>
-                <p><em>Earth Like Planet</em>, coordinates: <a href="#" id="GPS" onclick="copyGPS('GPS:King Wash:12593.82:11777.22:-58311.1:#FF75C9F1:')">12593.82:11777.22:-58311.1</a></p>
-            </section>
-
-            <section id="contact">
-                <h2>Contact Us</h2>
-                <p>Have questions or comments? Reach out to us:</p>
-                <ul>
-                    <li>Email: <a href="mailto:info@kingwash.elp">info@kingwash.elp</a></li>
-                    <li>Comm Terminal: <a href="tel:+1234567890">+123-456-7890</a></li>
-                    <li>Visit us in person!</li>
-                </ul>
-            </section>
-            <section id="arcade">
-                <h2>The Backroom Arcade</h2>
-                <p>Our arcade is a side project turned local treasure. Here are some of the games you can play:</p>
-                <ul>
-                    <li><strong>Woodgal Jr.</strong>: A chopping good time!</li>
-                    <li><strong>Dance Engineer Dance</strong>: Dance to the music.</li>
-                    <li><strong>Wold 3D</strong>: Explore a 3d world!</li>
-                    <li>And more!</li>
-                </ul>
-                <a href="arcade/" class="button">Learn More About the Arcade</a>
-            </section>
-        </main>
-
-        <aside class="sidebar">
-            <h3>Photo Gallery</h3>
-            <img src="img/photo1.jpg" alt="Washing machines">
-            <img src="img/photo2.jpg" alt="Dryers and ATM">
-            <img src="img/photo3.jpg" alt="Interior of King Wash">
-            <img src="img/photo5.jpg" alt="Exterior of King Wash">
-        </aside>
     </div>
 
-    <footer>
-        <p>&copy; 2077 King Wash Laundromat. Powered by <span class="glitch-text" id="company-name">Grindstone Enterprises</span>.</p>
+    <header class="luxury-header">
+        <nav class="main-nav">
+            <div class="nav-logo">
+                <img src="img/logo-gold.png" alt="King Wash" class="logo-img">
+                <span class="logo-text">King Wash</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="rewards.html" class="nav-link">Rewards</a></li>
+                <li><a href="location.html" class="nav-link">Location</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Random Images -->
+    <section class="hero-section" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">King Wash Laundromat</h1>
+            <p class="hero-subtitle">Premium laundry services in the heart of Grindstone Colony</p>
+            <div class="hero-features">
+                <span class="feature-tag">Professional Clean</span>
+                <span class="feature-tag">Comfortable Environment</span>
+                <span class="feature-tag">Retro Entertainment</span>
+            </div>
+            <div class="hero-cta">
+                <a href="services.html" class="cta-button primary">Our Services</a>
+                <a href="rewards.html" class="cta-button secondary">Join Rewards</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours & Quick Info -->
+    <section class="quick-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">🕒</div>
+                    <h3>Hours</h3>
+                    <p class="hours-today">Today: 6:00 AM - 10:00 PM</p>
+                    <a href="location.html" class="info-link">View all hours</a>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Downtown Grindstone</p>
+                    <a href="location.html" class="info-link">Get directions</a>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">⭐</div>
+                    <h3>Rewards</h3>
+                    <p>Earn points with every visit</p>
+                    <a href="rewards.html" class="info-link">Learn more</a>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🎮</div>
+                    <h3>Entertainment</h3>
+                    <p>Retro arcade while you wait</p>
+                    <a href="arcade/index.html" class="info-link">Play games</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Deals -->
+    <section class="deals-section">
+        <div class="container">
+            <h2 class="section-title">Today's Specials</h2>
+            <div class="deals-grid">
+                <div class="deal-card featured">
+                    <div class="deal-badge">Daily Special</div>
+                    <h3>Wash & Fold Service</h3>
+                    <p class="deal-price">
+                        <span class="original-price">45 SC</span>
+                        <span class="sale-price">35 SC</span>
+                    </p>
+                    <p class="deal-description">Professional wash, dry, and fold service. Perfect for busy professionals.</p>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">Weekly</div>
+                    <h3>Loyalty Bonus</h3>
+                    <p class="deal-price">Double Points</p>
+                    <p class="deal-description">Earn 2x reward points on all services this week.</p>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">Partnership</div>
+                    <h3>Cosmic Coffee Combo</h3>
+                    <p class="deal-price">Save 15 SC</p>
+                    <p class="deal-description">Show your King Wash receipt at Cosmic Coffee for a discount.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Partners -->
+    <section class="partners-section">
+        <div class="container">
+            <h2 class="section-title">Downtown Grindstone Partners</h2>
+            <p class="section-subtitle">Supporting our local business community</p>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-icon">🍸</div>
+                    <h3>Freddie's Bar & Nightclub</h3>
+                    <p>Unwind after laundry day with craft cocktails and live music</p>
+                    <div class="partner-offer">Show King Wash receipt for 10% off</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-icon">☕</div>
+                    <h3>Cosmic Coffee</h3>
+                    <p>Fresh coffee and gourmet meals while your clothes clean</p>
+                    <div class="partner-offer">Free pastry with coffee purchase</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-icon">🛒</div>
+                    <h3>Acosta 24/7 Store</h3>
+                    <p>Grab supplies, snacks, and essentials any time of day</p>
+                    <div class="partner-offer">5% off with loyalty card</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-icon">📋</div>
+                    <h3>Downtown Contracts Office</h3>
+                    <p>Find work opportunities and local contracts</p>
+                    <div class="partner-offer">Free laundry with job placement</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Experience the King Wash Difference</h2>
+                <p>Premium service, comfortable environment, and community connections</p>
+                <div class="cta-buttons">
+                    <a href="services.html" class="cta-button primary">View Services</a>
+                    <a href="rewards.html" class="cta-button secondary">Join Rewards Program</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="img/logo-gold.png" alt="King Wash">
+                        <span>King Wash</span>
+                    </div>
+                    <p>Premium laundry services in Grindstone Colony</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="rewards.html">Rewards</a></li>
+                        <li><a href="location.html">Location</a></li>
+                        <li><a href="arcade/index.html">Arcade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="community.html">Local Partners</a></li>
+                        <li><a href="#freddie">Freddie's Bar</a></li>
+                        <li><a href="#cosmic">Cosmic Coffee</a></li>
+                        <li><a href="#acosta">Acosta Store</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Downtown Grindstone<br>Earth Like Planet</p>
+                    <p class="coordinates">
+                        <a href="#" onclick="copyGPS('GPS:King Wash:12593.82:11777.22:-58311.1:#FF75C9F1:')">
+                            📍 GPS Coordinates
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2077 King Wash Laundromat. Powered by <span class="glitch-text" id="company-name">Grindstone Enterprises</span>.</p>
+            </div>
+        </div>
     </footer>
+
     <script>
+        // Random hero image functionality
+        const heroImages = [
+            'img/photo1.jpg', // washing machines
+            'img/photo2.jpg', // dryers  
+            'img/photo5.jpg', // front of building
+            'img/photo7.jpg'  // comfortable seating
+        ];
+
+        function setRandomHeroImage() {
+            const randomImage = heroImages[Math.floor(Math.random() * heroImages.length)];
+            const heroSection = document.getElementById('hero');
+            heroSection.style.backgroundImage = `url('${randomImage}')`;
+        }
+
+        // Copy GPS coordinates functionality
+        function copyGPS(gpsString) {
+            navigator.clipboard.writeText(gpsString).then(() => {
+                alert('GPS coordinates copied to clipboard!');
+            }).catch(() => {
+                prompt('Copy these GPS coordinates:', gpsString);
+            });
+        }
+
         // Glitch effect for company name
         const companyName = document.getElementById('company-name');
         let isGlitched = false;
@@ -94,7 +241,7 @@
                 
                 setTimeout(() => {
                     this.textContent = 'Null Systems';
-                    this.style.color = '#ff4444';
+                    this.style.color = '#d4af37';
                     this.classList.remove('glitching');
                     isGlitched = true;
                     
@@ -103,31 +250,7 @@
                     link.href = 'https://sophiathekitty.github.io/GridDB/index.html';
                     link.target = '_blank';
                     link.className = 'glitch-text';
-                    link.style.color = '#ff4444';
-                    link.style.textDecoration = 'none';
-                    link.textContent = 'Null Systems';
-                    
-                    this.parentNode.replaceChild(link, this);
-                }, 500);
-            }
-        });
-        
-        companyName.addEventListener('touchstart', function() {
-            // Same functionality for mobile
-            if (!isGlitched) {
-                this.classList.add('glitching');
-                
-                setTimeout(() => {
-                    this.textContent = 'Null Systems';
-                    this.style.color = '#ff4444';
-                    this.classList.remove('glitching');
-                    isGlitched = true;
-                    
-                    const link = document.createElement('a');
-                    link.href = 'https://sophiathekitty.github.io/GridDB/index.html';
-                    link.target = '_blank';
-                    link.className = 'glitch-text';
-                    link.style.color = '#ff4444';
+                    link.style.color = '#d4af37';
                     link.style.textDecoration = 'none';
                     link.textContent = 'Null Systems';
                     
@@ -136,31 +259,35 @@
             }
         });
 
-        function copyGPS(gps) {
-            // Check if the Clipboard API is available
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(gps)
-                    .then(() => {
-                        alert('Copied to clipboard!');
-                    })
-                    .catch(err => {
-                        console.error('Failed to copy text: ', err);
-                    });
-            } else {
-                // Fallback for unsupported browsers
-                const textarea = document.createElement('textarea');
-                textarea.value = gps;
-                document.body.appendChild(textarea);
-                textarea.select();
-                try {
-                    document.execCommand('copy');
-                    alert('Copied to clipboard!');
-                } catch (err) {
-                    console.error('Fallback failed to copy text: ', err);
-                }
-                document.body.removeChild(textarea);
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            setRandomHeroImage();
+            
+            // Update hours display based on current time
+            const now = new Date();
+            const day = now.getDay();
+            const hour = now.getHours();
+            const hoursElement = document.querySelector('.hours-today');
+            
+            if (day === 0) { // Sunday
+                hoursElement.textContent = 'Today: 8:00 AM - 8:00 PM';
+            } else if (day === 6) { // Saturday  
+                hoursElement.textContent = 'Today: 7:00 AM - 9:00 PM';
+            } else { // Weekdays
+                hoursElement.textContent = 'Today: 6:00 AM - 10:00 PM';
             }
-        }
+            
+            // Add open/closed status
+            const isOpen = (day === 0 && hour >= 8 && hour < 20) || 
+                          (day === 6 && hour >= 7 && hour < 21) ||
+                          (day >= 1 && day <= 5 && hour >= 6 && hour < 22);
+            
+            if (isOpen) {
+                hoursElement.innerHTML += ' <span class="status-open">Open Now</span>';
+            } else {
+                hoursElement.innerHTML += ' <span class="status-closed">Closed</span>';
+            }
+        });
     </script>
 </body>
 </html>

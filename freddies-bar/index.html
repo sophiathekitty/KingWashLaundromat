@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freddie's Bar & Nightclub - Downtown Grindstone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bar-header">
+        <div class="container">
+            <div class="bar-logo">
+                <div class="logo-icon">🍺</div>
+                <div class="logo-text">
+                    <h1>Freddie's Bar</h1>
+                    <p>& Underground Nightclub</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <a href="#home" class="nav-link active" onclick="showSection('home')">Home</a>
+                <a href="#menu" class="nav-link" onclick="showSection('menu')">Menu</a>
+                <a href="#events" class="nav-link" onclick="showSection('events')">Events</a>
+                <a href="#nightclub" class="nav-link" onclick="showSection('nightclub')">Nightclub</a>
+                <a href="#community" class="nav-link" onclick="showSection('community')">Community</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home-section" class="content-section active">
+        <div class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>Downtown's Hottest Spot</h2>
+                <p>Craft cocktails upstairs, underground beats downstairs</p>
+                <div class="hero-buttons">
+                    <button class="cta-button primary" onclick="showSection('menu')">View Menu</button>
+                    <button class="cta-button secondary" onclick="showSection('events')">Tonight's Events</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location & Hours -->
+        <section class="location-hours">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Street entrance under Apartment E<br>
+                        Downtown Grindstone<br>
+                        Easy access from King Wash area</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🕒</div>
+                        <h3>Bar Hours</h3>
+                        <p>Mon-Thu: 4:00 PM - 1:00 AM<br>
+                        Fri-Sat: 2:00 PM - 2:00 AM<br>
+                        Sunday: 6:00 PM - 12:00 AM</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🎵</div>
+                        <h3>Club Hours</h3>
+                        <p>Thu-Sat: 9:00 PM - 3:00 AM<br>
+                        Live DJs & Dancing<br>
+                        Basement Level Access</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features-section">
+            <div class="container">
+                <h2>Why Choose Freddie's?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🍹</div>
+                        <h3>Craft Cocktails</h3>
+                        <p>Expert bartenders mixing unique drinks with premium spirits and fresh ingredients.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎧</div>
+                        <h3>Underground Club</h3>
+                        <p>State-of-the-art sound system and lighting in our basement nightclub venue.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🍽️</div>
+                        <h3>Bar Food</h3>
+                        <p>Delicious comfort food perfect for sharing with friends or enjoying solo.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💳</div>
+                        <h3>King Wash Rewards</h3>
+                        <p>Earn and redeem loyalty points with our community partner program.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu-section" class="content-section">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Our Menu</h2>
+                <p>Crafted with care, served with style</p>
+            </div>
+
+            <div class="menu-categories">
+                <button class="menu-tab active" onclick="showMenuCategory('cocktails')">Cocktails</button>
+                <button class="menu-tab" onclick="showMenuCategory('beer')">Beer</button>
+                <button class="menu-tab" onclick="showMenuCategory('food')">Food</button>
+            </div>
+
+            <!-- Cocktails Menu -->
+            <div id="cocktails-menu" class="menu-category active">
+                <h3>Signature Cocktails</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Xocito</h4>
+                            <span class="price">280 SC</span>
+                        </div>
+                        <p>A refreshing twist on the classic mojito with exotic space fruit and mint.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Clang'o Libre</h4>
+                            <span class="price">220 SC</span>
+                        </div>
+                        <p>Colonial rum, space cola, and lime - a liberated take on the Cuba Libre.</p>
+                    </div>
+                    <div class="menu-item premium">
+                        <div class="item-header">
+                            <h4>Marek's Vision</h4>
+                            <span class="price">1,150 SC</span>
+                        </div>
+                        <p>Our premium cocktail featuring rare imported spirits and gold-infused garnish.</p>
+                        <span class="premium-badge">Premium</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Reactor Leak</h4>
+                            <span class="price">250 SC</span>
+                        </div>
+                        <p>A dangerously green concoction that glows under UV light - completely safe!</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Piña Aragathina</h4>
+                            <span class="price">300 SC</span>
+                        </div>
+                        <p>Tropical paradise in a glass with native Grindstone fruit and coconut cream.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Djangorita</h4>
+                            <span class="price">260 SC</span>
+                        </div>
+                        <p>Our signature margarita with a Django twist - salt rim and space lime.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Tool Shake</h4>
+                            <span class="price">200 SC</span>
+                        </div>
+                        <p>A milkshake cocktail that'll fix your thirst with vanilla vodka and cream.</p>
+                    </div>
+                </div>
+                
+                <h3>Non-Alcoholic</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Liquid Water</h4>
+                            <span class="price">Free</span>
+                        </div>
+                        <p>Pure, refreshing water - the ultimate thirst quencher.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Weekly Update</h4>
+                            <span class="price">Free</span>
+                        </div>
+                        <p>Our rotating selection of fresh juices and sodas - changes weekly!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beer Menu -->
+            <div id="beer-menu" class="menu-category">
+                <h3>Beer Selection</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Good Ale</h4>
+                            <span class="price">80 SC</span>
+                        </div>
+                        <p>A classic ale brewed locally with traditional methods and quality ingredients.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Medieval Lager</h4>
+                            <span class="price">75 SC</span>
+                        </div>
+                        <p>Crisp and clean lager with hints of history and a smooth finish.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Conveyor Porter</h4>
+                            <span class="price">75 SC</span>
+                        </div>
+                        <p>Rich, dark porter with industrial strength flavor and smooth delivery.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Menu -->
+            <div id="food-menu" class="menu-category">
+                <h3>Bar Food</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Grindstone Wings</h4>
+                            <span class="price">180 SC</span>
+                        </div>
+                        <p>Crispy wings tossed in our signature spicy Grindstone sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Loaded Nachos</h4>
+                            <span class="price">220 SC</span>
+                        </div>
+                        <p>House-made chips loaded with cheese, jalapeños, and your choice of protein.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Downtown Burger</h4>
+                            <span class="price">320 SC</span>
+                        </div>
+                        <p>Juicy burger with local beef, fresh toppings, and hand-cut fries.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Mozzarella Sticks</h4>
+                            <span class="price">150 SC</span>
+                        </div>
+                        <p>Golden fried cheese sticks served with marinara dipping sauce.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events-section" class="content-section">
+        <div class="container">
+            <div class="events-header">
+                <h2>Events & Entertainment</h2>
+                <p>Something happening every night of the week</p>
+            </div>
+
+            <div class="events-grid">
+                <div class="event-card featured">
+                    <div class="event-date">
+                        <div class="date-number">02</div>
+                        <div class="date-month">NOV</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Saturday Night Fever</h3>
+                        <div class="event-time">🕘 9:00 PM - 3:00 AM</div>
+                        <div class="event-location">Underground Nightclub</div>
+                        <p>DJ Phoenix spinning the hottest tracks. Dance floor open all night!</p>
+                        <div class="event-features">
+                            <span class="feature-tag">Live DJ</span>
+                            <span class="feature-tag">Dancing</span>
+                            <span class="feature-tag">Light Show</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="date-number">03</div>
+                        <div class="date-month">NOV</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Sunday Trivia Night</h3>
+                        <div class="event-time">🕰️ 7:00 PM - 10:00 PM</div>
+                        <div class="event-location">Main Bar</div>
+                        <p>Test your knowledge and win prizes! Teams welcome.</p>
+                        <div class="event-features">
+                            <span class="feature-tag">Trivia</span>
+                            <span class="feature-tag">Prizes</span>
+                            <span class="feature-tag">Teams</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="date-number">07</div>
+                        <div class="date-month">NOV</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Thirsty Thursday</h3>
+                        <div class="event-time">🕕 6:00 PM - 1:00 AM</div>
+                        <div class="event-location">Main Bar & Club</div>
+                        <p>Half-price cocktails and $2 beer specials all night long!</p>
+                        <div class="event-features">
+                            <span class="feature-tag">Half Price</span>
+                            <span class="feature-tag">Specials</span>
+                            <span class="feature-tag">All Night</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="date-number">08</div>
+                        <div class="date-month">NOV</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Friday Night Live</h3>
+                        <div class="event-time">🕘 10:00 PM - 3:00 AM</div>
+                        <div class="event-location">Underground Nightclub</div>
+                        <p>Live band "Solar Winds" performing their greatest hits!</p>
+                        <div class="event-features">
+                            <span class="feature-tag">Live Music</span>
+                            <span class="feature-tag">Solar Winds</span>
+                            <span class="feature-tag">Cover Charge</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="date-number">15</div>
+                        <div class="date-month">NOV</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Downtown Wash & Social</h3>
+                        <div class="event-time">🕕 6:00 PM - 9:00 PM</div>
+                        <div class="event-location">Main Bar</div>
+                        <p>Community event with King Wash! Food specials and arcade tournaments.</p>
+                        <div class="event-features">
+                            <span class="feature-tag">Community</span>
+                            <span class="feature-tag">Food Specials</span>
+                            <span class="feature-tag">King Wash</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="date-number">23</div>
+                        <div class="date-month">NOV</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Karaoke Madness</h3>
+                        <div class="event-time">🕘 8:00 PM - 1:00 AM</div>
+                        <div class="event-location">Main Bar</div>
+                        <p>Sing your heart out! Private booths available for groups.</p>
+                        <div class="event-features">
+                            <span class="feature-tag">Karaoke</span>
+                            <span class="feature-tag">Private Booths</span>
+                            <span class="feature-tag">Groups Welcome</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nightclub Section -->
+    <section id="nightclub-section" class="content-section">
+        <div class="container">
+            <div class="nightclub-header">
+                <h2>Underground Nightclub</h2>
+                <p>Descend into Downtown's premier nightlife destination</p>
+            </div>
+
+            <div class="nightclub-content">
+                <div class="club-features">
+                    <div class="club-feature">
+                        <div class="feature-icon">🎧</div>
+                        <h3>Professional Sound System</h3>
+                        <p>State-of-the-art audio equipment delivering crystal clear beats that you can feel in your chest.</p>
+                    </div>
+                    <div class="club-feature">
+                        <div class="feature-icon">💡</div>
+                        <h3>Dynamic Lighting</h3>
+                        <p>Synchronized LED light shows that pulse with the music and create an immersive atmosphere.</p>
+                    </div>
+                    <div class="club-feature">
+                        <div class="feature-icon">🕺</div>
+                        <h3>Spacious Dance Floor</h3>
+                        <p>Professional-grade dance floor with room for everyone to move and groove all night long.</p>
+                    </div>
+                    <div class="club-feature">
+                        <div class="feature-icon">🍸</div>
+                        <h3>VIP Bar Service</h3>
+                        <p>Dedicated bartenders serving premium cocktails and bottle service for the ultimate experience.</p>
+                    </div>
+                </div>
+
+                <div class="club-schedule">
+                    <h3>Weekly Schedule</h3>
+                    <div class="schedule-grid">
+                        <div class="schedule-item">
+                            <div class="day">Thursday</div>
+                            <div class="event">House Night</div>
+                            <div class="time">9:00 PM - 2:00 AM</div>
+                            <div class="dj">DJ Phoenix</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="day">Friday</div>
+                            <div class="event">Live Music</div>
+                            <div class="time">10:00 PM - 3:00 AM</div>
+                            <div class="dj">Rotating Bands</div>
+                        </div>
+                        <div class="schedule-item featured">
+                            <div class="day">Saturday</div>
+                            <div class="event">Main Event</div>
+                            <div class="time">9:00 PM - 3:00 AM</div>
+                            <div class="dj">Featured DJs</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="club-info">
+                    <h3>Club Information</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <strong>Cover Charge:</strong>
+                            <span>Thu: 50 SC | Fri-Sat: 100 SC</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Age Requirement:</strong>
+                            <span>21+ with valid ID</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Dress Code:</strong>
+                            <span>Smart casual to dressy</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>VIP Tables:</strong>
+                            <span>Available for reservation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community-section" class="content-section">
+        <div class="container">
+            <div class="community-header">
+                <h2>Community Partners</h2>
+                <p>Part of the Downtown Grindstone business network</p>
+            </div>
+
+            <!-- Partner Network -->
+            <div class="partners-section">
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-logo">👑</div>
+                        <h3>King Wash Laundromat</h3>
+                        <p>Our neighbor and rewards partner. Earn points here, spend them there!</p>
+                        <div class="partner-benefits">
+                            <span class="benefit">10% off food with Royal Wash membership</span>
+                            <span class="benefit">Free appetizer on laundry day</span>
+                            <span class="benefit">50 bonus points per visit</span>
+                        </div>
+                        <a href="../index.html" class="partner-link">Visit King Wash</a>
+                    </div>
+
+                    <div class="partner-card">
+                        <div class="partner-logo">☕</div>
+                        <h3>Cosmic Coffee</h3>
+                        <p>Perfect for pre-gaming or post-party recovery with artisanal coffee.</p>
+                        <div class="partner-benefits">
+                            <span class="benefit">Coffee delivery to VIP tables</span>
+                            <span class="benefit">Late night coffee service</span>
+                            <span class="benefit">Hangover recovery specials</span>
+                        </div>
+                        <a href="../cosmic-coffee/index.html" class="partner-link">Visit Cosmic Coffee</a>
+                    </div>
+
+                    <div class="partner-card">
+                        <div class="partner-logo">🛒</div>
+                        <h3>Acosta Store</h3>
+                        <p>Late night snacks and supplies when you need them most.</p>
+                        <div class="partner-benefits">
+                            <span class="benefit">24/7 convenience</span>
+                            <span class="benefit">Party supplies available</span>
+                            <span class="benefit">Member discounts</span>
+                        </div>
+                        <a href="../acosta-store/index.html" class="partner-link">Visit Acosta Store</a>
+                    </div>
+
+                    <div class="partner-card">
+                        <div class="partner-logo">🏢</div>
+                        <h3>Downtown Contracts</h3>
+                        <p>Professional services and employment opportunities in the district.</p>
+                        <div class="partner-benefits">
+                            <span class="benefit">Event planning services</span>
+                            <span class="benefit">Security coordination</span>
+                            <span class="benefit">Licensing assistance</span>
+                        </div>
+                        <a href="../downtown-contracts/index.html" class="partner-link">Visit Downtown Contracts</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Ring -->
+            <div class="webring-section">
+                <h3>Downtown Grindstone Web Ring</h3>
+                <div class="webring-navigation">
+                    <div class="webring-controls">
+                        <button class="webring-btn prev" onclick="navigateWebRing('prev')">← Previous Site</button>
+                        <div class="webring-info">
+                            <div class="webring-logo">🌐</div>
+                            <span>Downtown Grindstone Ring</span>
+                        </div>
+                        <button class="webring-btn next" onclick="navigateWebRing('next')">Next Site →</button>
+                    </div>
+                    
+                    <div class="webring-sites">
+                        <a href="../index.html" class="ring-site">
+                            <div class="site-icon">👑</div>
+                            <span>King Wash</span>
+                        </a>
+                        <a href="#" class="ring-site current">
+                            <div class="site-icon">🍺</div>
+                            <span>Freddie's Bar</span>
+                        </a>
+                        <a href="../cosmic-coffee/index.html" class="ring-site">
+                            <div class="site-icon">☕</div>
+                            <span>Cosmic Coffee</span>
+                        </a>
+                        <a href="../acosta-store/index.html" class="ring-site">
+                            <div class="site-icon">🛒</div>
+                            <span>Acosta Store</span>
+                        </a>
+                        <a href="../downtown-contracts/index.html" class="ring-site">
+                            <div class="site-icon">🏢</div>
+                            <span>Downtown Contracts</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bar-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">🍺</div>
+                        <span>Freddie's Bar</span>
+                    </div>
+                    <p>Downtown Grindstone's premier bar and nightclub destination</p>
+                    <div class="footer-location">
+                        <span>📍 Street entrance under Apartment E</span>
+                        <span>🎵 Underground nightclub in basement</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Venues</h4>
+                    <ul>
+                        <li><a href="#menu">Main Bar</a></li>
+                        <li><a href="#nightclub">Underground Club</a></li>
+                        <li><a href="#events">Events & Entertainment</a></li>
+                        <li><a href="#community">Community Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community Partners</h4>
+                    <ul>
+                        <li><a href="../index.html">King Wash Laundromat</a></li>
+                        <li><a href="../cosmic-coffee/index.html">Cosmic Coffee</a></li>
+                        <li><a href="../acosta-store/index.html">Acosta Store</a></li>
+                        <li><a href="../downtown-contracts/index.html">Downtown Contracts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact & Hours</h4>
+                    <p>Under Apartment E<br>Downtown Grindstone</p>
+                    <p class="bar-hours">Bar: 4PM-2AM Daily<br>Club: Thu-Sat 9PM-3AM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2077 Freddie's Bar & Nightclub. Part of the Downtown Grindstone community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+<!-- Photo Requirements List:
+Required Photos for Freddie's Bar Design:
+
+1. freddies-bar-exterior.jpg - Street entrance under Apartment E, neon signs, welcoming facade
+2. main-bar-interior.jpg - Upstairs bar area, bartender, cocktails, warm lighting, customers
+3. bar-seating.jpg - Bar stools, counter, bottles display, industrial-chic design
+4. cocktails-spread.jpg - Array of signature cocktails, Xocito, Marek's Vision, colorful drinks
+5. underground-entrance.jpg - Stairs going down to nightclub, dramatic lighting, club entrance
+6. nightclub-interior.jpg - Dance floor, DJ booth, LED lighting, club atmosphere
+7. nightclub-crowd.jpg - People dancing, DJ performing, club lighting effects, energy
+8. vip-area.jpg - VIP tables, bottle service, elevated seating, premium atmosphere
+9. live-music-setup.jpg - Band performing, stage area, crowd watching, nightclub setting
+10. trivia-night.jpg - Customers at tables, trivia host, casual bar atmosphere, groups
+11. food-spread.jpg - Bar food platter, wings, nachos, burger, appetizers
+12. beer-selection.jpg - Beer taps, bottles, Good Ale, Medieval Lager, Conveyor Porter
+13. bartender-action.jpg - Bartender mixing drinks, cocktail shaker, professional service
+14. basement-bar.jpg - Underground bar area, club bartender, premium bottles, neon lighting
+15. event-poster.jpg - Promotional posters, event announcements, club graphics, neon style
+-->

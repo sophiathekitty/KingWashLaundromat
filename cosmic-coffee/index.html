@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Coffee - Downtown Grindstone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="coffee-header">
+        <div class="container">
+            <div class="coffee-logo">
+                <div class="logo-icon">☕</div>
+                <div class="logo-text">
+                    <h1>Cosmic Coffee</h1>
+                    <p>Artisanal brews from across the galaxy</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <a href="#home" class="nav-link active" onclick="showSection('home')">Home</a>
+                <a href="#menu" class="nav-link" onclick="showSection('menu')">Menu</a>
+                <a href="#study" class="nav-link" onclick="showSection('study')">Study Space</a>
+                <a href="#events" class="nav-link" onclick="showSection('events')">Events</a>
+                <a href="#community" class="nav-link" onclick="showSection('community')">Community</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home-section" class="content-section active">
+        <div class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>Fuel Your Universe</h2>
+                <p>Premium coffee, cosmic atmosphere, infinite possibilities</p>
+                <div class="hero-buttons">
+                    <button class="cta-button primary" onclick="showSection('menu')">Explore Menu</button>
+                    <button class="cta-button secondary" onclick="showSection('study')">Study Space</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location & Hours -->
+        <section class="location-hours">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Adjacent building to Apartment B<br>
+                        Downtown Grindstone<br>
+                        Walking distance from all partners</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🕒</div>
+                        <h3>Hours</h3>
+                        <p>Mon-Fri: 6:00 AM - 10:00 PM<br>
+                        Sat-Sun: 7:00 AM - 11:00 PM<br>
+                        Study space open 24/7</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">☕</div>
+                        <h3>Specialties</h3>
+                        <p>Single-origin cosmic beans<br>
+                        House-made pastries<br>
+                        Interstellar flavor profiles</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features-section">
+            <div class="container">
+                <h2>Why Choose Cosmic Coffee?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌌</div>
+                        <h3>Cosmic Beans</h3>
+                        <p>Sourced from the finest coffee planets across the galaxy for unique flavors.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Study Haven</h3>
+                        <p>Quiet zones, high-speed Wi-Fi, and comfortable seating for productivity.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🥐</div>
+                        <h3>Fresh Pastries</h3>
+                        <p>Daily-baked goods that pair perfectly with our artisanal coffee blends.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💳</div>
+                        <h3>King Wash Rewards</h3>
+                        <p>Earn and redeem loyalty points through our community partner program.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu-section" class="content-section">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Our Cosmic Menu</h2>
+                <p>An excessive selection for the discerning space traveler</p>
+            </div>
+
+            <div class="menu-categories">
+                <button class="menu-tab active" onclick="showMenuCategory('starters')">Starters</button>
+                <button class="menu-tab" onclick="showMenuCategory('mains')">Main Courses</button>
+                <button class="menu-tab" onclick="showMenuCategory('desserts')">Desserts</button>
+                <button class="menu-tab" onclick="showMenuCategory('coffee')">Coffee & Drinks</button>
+                <button class="menu-tab" onclick="showMenuCategory('pastries')">Pastries</button>
+            </div>
+
+            <!-- Starters Menu -->
+            <div id="starters-menu" class="menu-category active">
+                <h3>Cosmic Starters</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Star-Salad</h4>
+                            <span class="price">450 SC</span>
+                        </div>
+                        <p>A green garden salad with tomatoes and starfruit, olive oil vinaigrette with caramelized shallots</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Red Star Soup</h4>
+                            <span class="price">560 SC</span>
+                        </div>
+                        <p>Beetroot soup with a dash of aceto balsamico and crème fraiche</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>French Space Engineer</h4>
+                            <span class="price">580 SC</span>
+                        </div>
+                        <p>Sliced white bread, soaked and fried in eggs, milk and brown sugar</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Nebula Appetizer Platter</h4>
+                            <span class="price">680 SC</span>
+                        </div>
+                        <p>Assorted space-aged cheeses, cosmic crackers, and stellar preserves</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Asteroid Bruschetta</h4>
+                            <span class="price">420 SC</span>
+                        </div>
+                        <p>Toasted space bread topped with meteor tomatoes and fresh basilisk herbs</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Courses Menu -->
+            <div id="mains-menu" class="menu-category">
+                <h3>Galactic Main Courses</h3>
+                <div class="menu-grid">
+                    <div class="menu-item premium">
+                        <div class="item-header">
+                            <h4>Steak á la Carcosa</h4>
+                            <span class="price">960 SC</span>
+                        </div>
+                        <p>Sirloin Steak with fresh mushroom cream sauce and parsley potatoes on the side</p>
+                        <span class="premium-badge">Chef's Special</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Jupiter Roast</h4>
+                            <span class="price">920 SC</span>
+                        </div>
+                        <p>Slice of pork roast, green beans in a bacon-basil-sauce with fried potato dumplings on the side</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Spaghetti Interstellar</h4>
+                            <span class="price">840 SC</span>
+                        </div>
+                        <p>Pepper, onion, garlic and Zucchinis steamed in fresh vegetable soup and reduced with spelt wheat</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Orbital Sea Bass</h4>
+                            <span class="price">880 SC</span>
+                        </div>
+                        <p>Kohlrabi stripes and a lemon-dill-sauce and butter potatoes on the side</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Martian Mushroom Risotto</h4>
+                            <span class="price">780 SC</span>
+                        </div>
+                        <p>Creamy arborio rice with exotic Martian fungi and Parmesan from the outer rim</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Solar Flare Curry</h4>
+                            <span class="price">720 SC</span>
+                        </div>
+                        <p>Spicy cosmic curry with stellar vegetables served over quantum rice</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Void Chicken Parmesan</h4>
+                            <span class="price">850 SC</span>
+                        </div>
+                        <p>Breaded space chicken with melted cheese and cosmic marinara sauce</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Galaxy Burger Deluxe</h4>
+                            <span class="price">690 SC</span>
+                        </div>
+                        <p>Premium space beef with cosmic toppings and antimatter fries</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts Menu -->
+            <div id="desserts-menu" class="menu-category">
+                <h3>Cosmic Desserts</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Space Pears</h4>
+                            <span class="price">640 SC</span>
+                        </div>
+                        <p>Pears, caramelized on honey, served with vanilla icecream</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Plasma Grapes</h4>
+                            <span class="price">700 SC</span>
+                        </div>
+                        <p>Grapes, steamed in a champaign-cream</p>
+                    </div>
+                    <div class="menu-item premium">
+                        <div class="item-header">
+                            <h4>Ion-pudding</h4>
+                            <span class="price">760 SC</span>
+                        </div>
+                        <p>Vanilla pudding with Tonka and Cardamon with a hint of grapefruit</p>
+                        <span class="premium-badge">Signature</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Supernova Cheesecake</h4>
+                            <span class="price">820 SC</span>
+                        </div>
+                        <p>Explosive cheesecake with stellar berry compote and cosmic dust</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Black Hole Chocolate Cake</h4>
+                            <span class="price">780 SC</span>
+                        </div>
+                        <p>Dense chocolate cake that pulls you in with dark matter ganache</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Cosmic Tiramisu</h4>
+                            <span class="price">720 SC</span>
+                        </div>
+                        <p>Traditional tiramisu with coffee from distant star systems</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coffee & Drinks Menu -->
+            <div id="coffee-menu" class="menu-category">
+                <h3>Coffee & Beverages</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Cosmic Espresso</h4>
+                            <span class="price">180 SC</span>
+                        </div>
+                        <p>Single shot of our signature cosmic blend - concentrated stellar energy</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Galactic Latte</h4>
+                            <span class="price">320 SC</span>
+                        </div>
+                        <p>Smooth espresso with steamed milk and cosmic foam art</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Nebula Cappuccino</h4>
+                            <span class="price">300 SC</span>
+                        </div>
+                        <p>Perfect balance of espresso, steamed milk, and fluffy cosmic foam</p>
+                    </div>
+                    <div class="menu-item premium">
+                        <div class="item-header">
+                            <h4>Black Hole Cold Brew</h4>
+                            <span class="price">380 SC</span>
+                        </div>
+                        <p>16-hour cold extraction that captures the essence of dark matter</p>
+                        <span class="premium-badge">Limited</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Solar Wind Americano</h4>
+                            <span class="price">250 SC</span>
+                        </div>
+                        <p>Espresso with hot water - simple, pure, and energizing</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Asteroid Mocha</h4>
+                            <span class="price">360 SC</span>
+                        </div>
+                        <p>Rich chocolate and espresso collision with whipped cream crater</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Quantum Macchiato</h4>
+                            <span class="price">340 SC</span>
+                        </div>
+                        <p>Espresso "marked" with perfectly textured milk in quantum foam</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Space Chai Latte</h4>
+                            <span class="price">290 SC</span>
+                        </div>
+                        <p>Exotic spices from across the galaxy in creamy steamed milk</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Cosmic Hot Chocolate</h4>
+                            <span class="price">280 SC</span>
+                        </div>
+                        <p>Rich drinking chocolate with cosmic marshmallows</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Interstellar Iced Tea</h4>
+                            <span class="price">220 SC</span>
+                        </div>
+                        <p>Refreshing blend of cosmic teas served over stellar ice</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pastries Menu -->
+            <div id="pastries-menu" class="menu-category">
+                <h3>Fresh Cosmic Pastries</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Stellar Croissant</h4>
+                            <span class="price">180 SC</span>
+                        </div>
+                        <p>Buttery, flaky pastry that melts like stardust on your tongue</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Galaxy Muffin</h4>
+                            <span class="price">220 SC</span>
+                        </div>
+                        <p>Blueberry muffin with cosmic sugar crystals - changes daily flavor</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Cosmic Cinnamon Roll</h4>
+                            <span class="price">260 SC</span>
+                        </div>
+                        <p>Spiral pastry with cinnamon from distant spice planets</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Supernova Scone</h4>
+                            <span class="price">200 SC</span>
+                        </div>
+                        <p>Explosive fruit scone with stellar jam and cosmic cream</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Asteroid Bagel</h4>
+                            <span class="price">160 SC</span>
+                        </div>
+                        <p>Fresh bagel with choice of cosmic cream cheese or space butter</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Orbit Danish</h4>
+                            <span class="price">240 SC</span>
+                        </div>
+                        <p>Flaky danish pastry with rotating seasonal cosmic fillings</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Meteor Donut</h4>
+                            <span class="price">190 SC</span>
+                        </div>
+                        <p>Glazed donut that trails cosmic sugar dust</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Quasar Quiche</h4>
+                            <span class="price">380 SC</span>
+                        </div>
+                        <p>Savory pastry with eggs, cheese, and vegetables from garden worlds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Space Section -->
+    <section id="study-section" class="content-section">
+        <div class="container">
+            <div class="study-header">
+                <h2>Cosmic Study Space</h2>
+                <p>Where productivity meets caffeine in perfect harmony</p>
+            </div>
+
+            <div class="study-content">
+                <div class="study-features">
+                    <div class="study-feature">
+                        <div class="feature-icon">📶</div>
+                        <h3>High-Speed Wi-Fi</h3>
+                        <p>Quantum-entangled internet connection faster than light speed for all your research needs.</p>
+                    </div>
+                    <div class="study-feature">
+                        <div class="feature-icon">🔌</div>
+                        <h3>Power Stations</h3>
+                        <p>Charging ports at every seat to keep your devices powered throughout your study session.</p>
+                    </div>
+                    <div class="study-feature">
+                        <div class="feature-icon">🤫</div>
+                        <h3>Quiet Zones</h3>
+                        <p>Designated silent areas with soundproof barriers for maximum concentration.</p>
+                    </div>
+                    <div class="study-feature">
+                        <div class="feature-icon">🛋️</div>
+                        <h3>Comfortable Seating</h3>
+                        <p>Ergonomic chairs and cozy couches designed for long study sessions.</p>
+                    </div>
+                </div>
+
+                <div class="study-zones">
+                    <h3>Study Zones</h3>
+                    <div class="zones-grid">
+                        <div class="zone-card">
+                            <h4>Solo Study Pods</h4>
+                            <p>Individual soundproof pods with adjustable lighting and climate control for ultimate focus.</p>
+                            <div class="zone-features">
+                                <span>🎧 Noise cancellation</span>
+                                <span>💡 Adjustable lighting</span>
+                                <span>🌡️ Climate control</span>
+                            </div>
+                        </div>
+                        <div class="zone-card">
+                            <h4>Group Study Areas</h4>
+                            <p>Collaborative spaces with whiteboards and presentation screens for team projects.</p>
+                            <div class="zone-features">
+                                <span>📺 Presentation screens</span>
+                                <span>🖍️ Whiteboards</span>
+                                <span>👥 Group seating</span>
+                            </div>
+                        </div>
+                        <div class="zone-card">
+                            <h4>Casual Lounge</h4>
+                            <p>Relaxed seating area perfect for light reading or casual laptop work.</p>
+                            <div class="zone-features">
+                                <span>☕ Coffee nearby</span>
+                                <span>🛋️ Comfy couches</span>
+                                <span>📚 Background music</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="study-policies">
+                    <h3>Study Space Guidelines</h3>
+                    <div class="policies-grid">
+                        <div class="policy-item">
+                            <strong>Hours:</strong>
+                            <span>24/7 access with coffee shop purchase</span>
+                        </div>
+                        <div class="policy-item">
+                            <strong>Reservations:</strong>
+                            <span>Solo pods can be reserved up to 4 hours</span>
+                        </div>
+                        <div class="policy-item">
+                            <strong>Food & Drink:</strong>
+                            <span>Only Cosmic Coffee items allowed in study areas</span>
+                        </div>
+                        <div class="policy-item">
+                            <strong>Noise Level:</strong>
+                            <span>Quiet zones enforce silent policy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events-section" class="content-section">
+        <div class="container">
+            <div class="events-header">
+                <h2>Cosmic Events</h2>
+                <p>Where coffee culture meets community</p>
+            </div>
+
+            <div class="events-grid">
+                <div class="event-card featured">
+                    <div class="event-date">
+                        <div class="date-number">03</div>
+                        <div class="date-month">NOV</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Sunday Coffee Cupping</h3>
+                        <div class="event-time">🕐 2:00 PM - 4:00 PM</div>
+                        <div class="event-location">Main Café Area</div>
+                        <p>Professional coffee tasting session exploring beans from different star systems.</p>
+                        <div class="event-features">
+                            <span class="feature-tag">Coffee Education</span>
+                            <span class="feature-tag">Free Tasting</span>
+                            <span class="feature-tag">Expert Guide</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="date-number">05</div>
+                        <div class="date-month">NOV</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Latte Art Workshop</h3>
+                        <div class="event-time">🕕 6:00 PM - 8:00 PM</div>
+                        <div class="event-location">Barista Station</div>
+                        <p>Learn to create cosmic patterns in your coffee foam from our master baristas.</p>
+                        <div class="event-features">
+                            <span class="feature-tag">Hands-on</span>
+                            <span class="feature-tag">All Levels</span>
+                            <span class="feature-tag">Materials Included</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="date-number">08</div>
+                        <div class="date-month">NOV</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Study Group Social</h3>
+                        <div class="event-time">🕗 7:00 PM - 9:00 PM</div>
+                        <div class="event-location">Group Study Area</div>
+                        <p>Meet fellow students, form study groups, and enjoy discounted refreshments.</p>
+                        <div class="event-features">
+                            <span class="feature-tag">Networking</span>
+                            <span class="feature-tag">Study Groups</span>
+                            <span class="feature-tag">Student Discounts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="date-number">12</div>
+                        <div class="date-month">NOV</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Cosmic Poetry Night</h3>
+                        <div class="event-time">🕗 8:00 PM - 10:00 PM</div>
+                        <div class="event-location">Casual Lounge</div>
+                        <p>Open mic poetry readings with cosmic themes and stellar beverages.</p>
+                        <div class="event-features">
+                            <span class="feature-tag">Open Mic</span>
+                            <span class="feature-tag">Poetry</span>
+                            <span class="feature-tag">Cosmic Theme</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="date-number">15</div>
+                        <div class="date-month">NOV</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Downtown Wash & Social</h3>
+                        <div class="event-time">🕕 6:00 PM - 9:00 PM</div>
+                        <div class="event-location">Main Café</div>
+                        <p>Community event with free coffee for King Wash customers and loyalty rewards.</p>
+                        <div class="event-features">
+                            <span class="feature-tag">Community</span>
+                            <span class="feature-tag">Free Coffee</span>
+                            <span class="feature-tag">King Wash</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="date-number">20</div>
+                        <div class="date-month">NOV</div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Coffee & Code</h3>
+                        <div class="event-time">🕕 6:00 PM - 9:00 PM</div>
+                        <div class="event-location">Study Pods</div>
+                        <p>Programming meetup for developers and coders with caffeine and collaboration.</p>
+                        <div class="event-features">
+                            <span class="feature-tag">Programming</span>
+                            <span class="feature-tag">Networking</span>
+                            <span class="feature-tag">Tech Talk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community-section" class="content-section">
+        <div class="container">
+            <div class="community-header">
+                <h2>Community Partners</h2>
+                <p>Connected across the Downtown Grindstone galaxy</p>
+            </div>
+
+            <!-- Partner Network -->
+            <div class="partners-section">
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-logo">👑</div>
+                        <h3>King Wash Laundromat</h3>
+                        <p>Perfect pairing - coffee while you wash! Earn and redeem loyalty points.</p>
+                        <div class="partner-benefits">
+                            <span class="benefit">Free coffee punch card</span>
+                            <span class="benefit">15% off pastries with membership</span>
+                            <span class="benefit">25 points per dollar spent</span>
+                        </div>
+                        <a href="../index.html" class="partner-link">Visit King Wash</a>
+                    </div>
+
+                    <div class="partner-card">
+                        <div class="partner-logo">🍺</div>
+                        <h3>Freddie's Bar</h3>
+                        <p>From coffee in the morning to cocktails at night - we've got you covered!</p>
+                        <div class="partner-benefits">
+                            <span class="benefit">Coffee delivery to VIP tables</span>
+                            <span class="benefit">Hangover recovery specials</span>
+                            <span class="benefit">Late night coffee service</span>
+                        </div>
+                        <a href="../freddies-bar/index.html" class="partner-link">Visit Freddie's</a>
+                    </div>
+
+                    <div class="partner-card">
+                        <div class="partner-logo">🛒</div>
+                        <h3>Acosta Store</h3>
+                        <p>Grab snacks and supplies to fuel your study sessions and coffee breaks.</p>
+                        <div class="partner-benefits">
+                            <span class="benefit">Study snack discounts</span>
+                            <span class="benefit">Coffee bean retail sales</span>
+                            <span class="benefit">Bulk order coordination</span>
+                        </div>
+                        <a href="../acosta-store/index.html" class="partner-link">Visit Acosta Store</a>
+                    </div>
+
+                    <div class="partner-card">
+                        <div class="partner-logo">🏢</div>
+                        <h3>Downtown Contracts</h3>
+                        <p>Professional meetings over premium coffee in our quiet study spaces.</p>
+                        <div class="partner-benefits">
+                            <span class="benefit">Meeting room rental</span>
+                            <span class="benefit">Catering services</span>
+                            <span class="benefit">Business hour discounts</span>
+                        </div>
+                        <a href="../downtown-contracts/index.html" class="partner-link">Visit Downtown Contracts</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Ring -->
+            <div class="webring-section">
+                <h3>Downtown Grindstone Web Ring</h3>
+                <div class="webring-navigation">
+                    <div class="webring-controls">
+                        <button class="webring-btn prev" onclick="navigateWebRing('prev')">← Previous Site</button>
+                        <div class="webring-info">
+                            <div class="webring-logo">🌐</div>
+                            <span>Downtown Grindstone Ring</span>
+                        </div>
+                        <button class="webring-btn next" onclick="navigateWebRing('next')">Next Site →</button>
+                    </div>
+                    
+                    <div class="webring-sites">
+                        <a href="../index.html" class="ring-site">
+                            <div class="site-icon">👑</div>
+                            <span>King Wash</span>
+                        </a>
+                        <a href="../freddies-bar/index.html" class="ring-site">
+                            <div class="site-icon">🍺</div>
+                            <span>Freddie's Bar</span>
+                        </a>
+                        <a href="#" class="ring-site current">
+                            <div class="site-icon">☕</div>
+                            <span>Cosmic Coffee</span>
+                        </a>
+                        <a href="../acosta-store/index.html" class="ring-site">
+                            <div class="site-icon">🛒</div>
+                            <span>Acosta Store</span>
+                        </a>
+                        <a href="../downtown-contracts/index.html" class="ring-site">
+                            <div class="site-icon">🏢</div>
+                            <span>Downtown Contracts</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="coffee-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">☕</div>
+                        <span>Cosmic Coffee</span>
+                    </div>
+                    <p>Artisanal coffee and cosmic experiences in Downtown Grindstone</p>
+                    <div class="footer-location">
+                        <span>📍 Adjacent building to Apartment B</span>
+                        <span>📚 24/7 study space available</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#coffee">Coffee & Drinks</a></li>
+                        <li><a href="#pastries">Fresh Pastries</a></li>
+                        <li><a href="#mains">Full Meals</a></li>
+                        <li><a href="#study">Study Space</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community Partners</h4>
+                    <ul>
+                        <li><a href="../index.html">King Wash Laundromat</a></li>
+                        <li><a href="../freddies-bar/index.html">Freddie's Bar</a></li>
+                        <li><a href="../acosta-store/index.html">Acosta Store</a></li>
+                        <li><a href="../downtown-contracts/index.html">Downtown Contracts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact & Hours</h4>
+                    <p>Adjacent to Apartment B<br>Downtown Grindstone</p>
+                    <p class="coffee-hours">Mon-Fri: 6AM-10PM<br>Weekend: 7AM-11PM<br>Study: 24/7</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2077 Cosmic Coffee. Fueling the Downtown Grindstone community since 2075.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+<!-- Photo Requirements List:
+Required Photos for Cosmic Coffee Design:
+
+1. cosmic-coffee-exterior.jpg - Modern café storefront, cosmic theme signage, welcoming entrance
+2. main-cafe-interior.jpg - Spacious café area, cosmic décor, customers enjoying coffee
+3. coffee-bar-counter.jpg - Espresso machine, barista in action, coffee cups, cosmic aesthetic
+4. study-space-overview.jpg - Quiet study area, students with laptops, bookshelves, comfortable seating
+5. solo-study-pods.jpg - Individual study booths, modern design, focused students, tech integration
+6. group-study-area.jpg - Collaborative workspace, whiteboards, team meetings, presentation screens
+7. casual-lounge.jpg - Comfy couches, relaxed atmosphere, casual reading area, soft lighting
+8. coffee-selection.jpg - Various coffee drinks, latte art, cosmic presentation, colorful beverages
+9. pastry-display.jpg - Fresh baked goods, croissants, muffins, cosmic-themed pastries, display case
+10. full-meal-spread.jpg - Restaurant-style dishes, Steak á la Carcosa, gourmet presentation
+11. barista-latte-art.jpg - Barista creating latte art, steaming milk, coffee artistry, skill demonstration
+12. coffee-cupping-event.jpg - Coffee tasting session, multiple cups, expert guidance, educational atmosphere
+13. study-group-meeting.jpg - Students collaborating, laptops open, notebooks, group discussion
+14. cosmic-decor-details.jpg - Space-themed decorations, cosmic artwork, stellar ambiance, unique design
+15. 24-7-study-area.jpg - Late night study session, cozy lighting, dedicated students, peaceful atmosphere
+-->

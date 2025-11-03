@@ -851,15 +851,14 @@
                     this.classList.remove('glitching');
                     isGlitched = true;
                     
-                    const link = document.createElement('a');
-                    link.href = 'https://sophiathekitty.github.io/GridDB/index.html';
-                    link.target = '_blank';
-                    link.className = 'glitch-text';
-                    link.style.color = '#ff00d9';
-                    link.style.textDecoration = 'none';
-                    link.textContent = 'Null Systems';
+                    const span = document.createElement('span');
+                    span.className = 'glitch-text';
+                    span.style.color = '#ff00d9';
+                    span.style.cursor = 'pointer';
+                    span.textContent = 'Null Systems';
+                    span.onclick = () => alert('Access Denied - System Offline');
                     
-                    this.parentNode.replaceChild(link, this);
+                    this.parentNode.replaceChild(span, this);
                 }, 500);
             }
         });

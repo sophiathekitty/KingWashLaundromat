@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acosta Store - 24/7 Downtown Grindstone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="store-header">
+        <div class="container">
+            <div class="store-logo">
+                <div class="logo-icon">🛒</div>
+                <div class="logo-text">
+                    <h1>Acosta Store</h1>
+                    <p>24/7 Downtown Grindstone</p>
+                </div>
+            </div>
+            <div class="store-hours">
+                <div class="hours-badge">
+                    <span class="status-light"></span>
+                    <span>Open 24/7</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Location Banner -->
+    <section class="location-banner">
+        <div class="container">
+            <div class="location-info">
+                <div class="location-icon">📍</div>
+                <div class="location-text">
+                    <span>Located behind Apartments E, next to King Wash parking lot</span>
+                    <span class="delivery-note">Free delivery available within Downtown Grindstone</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: <span id="cart-total">0</span> SC</strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()" id="checkout-btn" disabled>
+                Create Delivery Contract
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Toggle Button -->
+    <button class="cart-toggle" onclick="toggleCart()" id="cart-toggle">
+        🛒 <span class="cart-count" id="cart-count">0</span>
+    </button>
+
+    <!-- Main Content -->
+    <main class="store-main">
+        <div class="container">
+            <!-- Store Introduction -->
+            <section class="store-intro">
+                <h2>Your 24/7 Downtown Supply Store</h2>
+                <p>From everyday essentials to specialty items, Acosta Store has everything you need. Located conveniently behind Apartments E and next to King Wash Laundromat, we're your go-to destination for quick shopping and reliable delivery service.</p>
+                <div class="intro-features">
+                    <div class="feature">
+                        <span class="feature-icon">🚚</span>
+                        <span>Free Local Delivery</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">💳</span>
+                        <span>Space Credits Accepted</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">📋</span>
+                        <span>Contract-Based Orders</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Product Categories -->
+            <section class="product-categories">
+                <div class="category-filters">
+                    <button class="filter-btn active" onclick="filterProducts('all')">All Items</button>
+                    <button class="filter-btn" onclick="filterProducts('consumables')">Consumables</button>
+                    <button class="filter-btn" onclick="filterProducts('medical')">Medical</button>
+                    <button class="filter-btn" onclick="filterProducts('collectibles')">Collectibles</button>
+                    <button class="filter-btn" onclick="filterProducts('materials')">Materials</button>
+                </div>
+            </section>
+
+            <!-- Products Grid -->
+            <section class="products-section">
+                <div class="products-grid" id="products-grid">
+                    <!-- Products will be dynamically loaded -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Community Web Ring -->
+    <section class="webring-section">
+        <div class="container">
+            <h3>Downtown Grindstone Web Ring</h3>
+            <div class="webring-navigation">
+                <div class="webring-controls">
+                    <button class="webring-btn prev" onclick="navigateWebRing('prev')">← Previous Site</button>
+                    <div class="webring-info">
+                        <div class="webring-logo">🌐</div>
+                        <span>Downtown Grindstone Ring</span>
+                    </div>
+                    <button class="webring-btn next" onclick="navigateWebRing('next')">Next Site →</button>
+                </div>
+                
+                <div class="webring-sites">
+                    <a href="../index.html" class="ring-site">
+                        <div class="site-icon">👑</div>
+                        <span>King Wash</span>
+                    </a>
+                    <a href="../freddies-bar/index.html" class="ring-site">
+                        <div class="site-icon">🍺</div>
+                        <span>Freddie's Bar</span>
+                    </a>
+                    <a href="../cosmic-coffee/index.html" class="ring-site">
+                        <div class="site-icon">☕</div>
+                        <span>Cosmic Coffee</span>
+                    </a>
+                    <a href="#" class="ring-site current">
+                        <div class="site-icon">🛒</div>
+                        <span>Acosta Store</span>
+                    </a>
+                    <a href="../downtown-contracts/index.html" class="ring-site">
+                        <div class="site-icon">🏢</div>
+                        <span>Downtown Contracts</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="store-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Acosta Store</h4>
+                    <p>Your trusted 24/7 supply store in Downtown Grindstone</p>
+                    <div class="footer-location">
+                        <span>📍 Behind Apartments E</span>
+                        <span>🚗 Next to King Wash parking</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>24/7 Shopping</li>
+                        <li>Free Local Delivery</li>
+                        <li>Contract Processing</li>
+                        <li>Bulk Orders</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community Partners</h4>
+                    <ul>
+                        <li><a href="../index.html">King Wash Laundromat</a></li>
+                        <li><a href="../freddies-bar/index.html">Freddie's Bar</a></li>
+                        <li><a href="../cosmic-coffee/index.html">Cosmic Coffee</a></li>
+                        <li><a href="../downtown-contracts/index.html">Downtown Contracts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Downtown Grindstone<br>Behind Apartments E</p>
+                    <p class="hours">Open 24 hours, 7 days a week</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2077 Acosta Store. Part of the Downtown Grindstone community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product database from README
+        const products = [
+            {
+                id: 1,
+                name: "Clang Kola",
+                price: 100,
+                stock: 50,
+                unit: "pcs",
+                category: "consumables",
+                description: "Refreshing cola beverage perfect for any time of day",
+                image: "🥤"
+            },
+            {
+                id: 2,
+                name: "Engineer Plushie",
+                price: 30000,
+                stock: 50,
+                unit: "pcs",
+                category: "collectibles",
+                description: "Adorable engineer plushie - collector's item and perfect gift",
+                image: "🧸"
+            },
+            {
+                id: 3,
+                name: "Gold Ore",
+                price: 200,
+                stock: 280,
+                unit: "kg",
+                category: "materials",
+                description: "High-quality gold ore for construction and crafting",
+                image: "🪙"
+            },
+            {
+                id: 4,
+                name: "Ice",
+                price: 50,
+                stock: 500,
+                unit: "kg",
+                category: "materials",
+                description: "Pure ice for cooling, preservation, and industrial use",
+                image: "🧊"
+            },
+            {
+                id: 5,
+                name: "Medkit",
+                price: 1000,
+                stock: 40,
+                unit: "pcs",
+                category: "medical",
+                description: "Emergency medical supplies kit for immediate care",
+                image: "🏥"
+            },
+            {
+                id: 6,
+                name: "Powerkit",
+                price: 1000,
+                stock: 40,
+                unit: "pcs",
+                category: "medical",
+                description: "Power restoration kit for equipment and emergency situations",
+                image: "⚡"
+            },
+            {
+                id: 7,
+                name: "Saberoid Plushie",
+                price: 30000,
+                stock: 50,
+                unit: "pcs",
+                category: "collectibles",
+                description: "Rare Saberoid plushie - limited edition collector's item",
+                image: "🦕"
+            }
+        ];
+
+        // Shopping cart
+        let cart = [];
+
+        // Initialize store
+        function initStore() {
+            displayProducts(products);
+            updateCartDisplay();
+        }
+
+        // Display products
+        function displayProducts(productsToShow) {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
+            productsToShow.forEach(product => {
+                const productCard = createProductCard(product);
+                grid.appendChild(productCard);
+            });
+        }
+
+        // Create product card
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <div class="product-image">
+                    <span class="product-emoji">${product.image}</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">${product.name}</h3>
+                    <p class="product-description">${product.description}</p>
+                    <div class="product-details">
+                        <div class="product-price">${product.price.toLocaleString()} SC</div>
+                        <div class="product-stock">Stock: ${product.stock} ${product.unit}</div>
+                    </div>
+                    <div class="product-actions">
+                        <div class="quantity-controls">
+                            <button onclick="changeQuantity(${product.id}, -1)">-</button>
+                            <input type="number" id="qty-${product.id}" value="1" min="1" max="${product.stock}">
+                            <button onclick="changeQuantity(${product.id}, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `;
+            return card;
+        }
+
+        // Change quantity
+        function changeQuantity(productId, change) {
+            const input = document.getElementById(`qty-${productId}`);
+            const currentValue = parseInt(input.value);
+            const newValue = Math.max(1, Math.min(currentValue + change, parseInt(input.max)));
+            input.value = newValue;
+        }
+
+        // Add to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const quantity = parseInt(document.getElementById(`qty-${productId}`).value);
+
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: quantity
+                });
+            }
+
+            updateCartDisplay();
+            showCartNotification(`Added ${quantity} ${product.name} to cart`);
+        }
+
+        // Remove from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartDisplay();
+        }
+
+        // Update cart display
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            // Update cart count
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+
+            // Update cart total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = total.toLocaleString();
+
+            // Update cart items
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
+                checkoutBtn.disabled = true;
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <span class="cart-item-emoji">${item.image}</span>
+                            <div class="cart-item-details">
+                                <div class="cart-item-name">${item.name}</div>
+                                <div class="cart-item-price">${item.price.toLocaleString()} SC × ${item.quantity}</div>
+                            </div>
+                        </div>
+                        <button class="remove-item" onclick="removeFromCart(${item.id})">×</button>
+                    </div>
+                `).join('');
+                checkoutBtn.disabled = false;
+            }
+        }
+
+        // Filter products
+        function filterProducts(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const filteredProducts = category === 'all' 
+                ? products 
+                : products.filter(product => product.category === category);
+
+            displayProducts(filteredProducts);
+        }
+
+        // Toggle cart
+        function toggleCart() {
+            const cartSidebar = document.getElementById('cart-sidebar');
+            cartSidebar.classList.toggle('open');
+        }
+
+        // Show cart notification
+        function showCartNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'cart-notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.classList.add('show');
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 2000);
+            }, 100);
+        }
+
+        // Checkout function
+        function checkout() {
+            if (cart.length === 0) return;
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const orderData = {
+                orderId: 'ACOSTA-' + Date.now(),
+                timestamp: new Date().toISOString(),
+                items: cart.map(item => ({
+                    name: item.name,
+                    quantity: item.quantity,
+                    unitPrice: item.price,
+                    total: item.price * item.quantity
+                })),
+                totalAmount: total,
+                deliveryAddress: 'Downtown Grindstone',
+                status: 'pending'
+            };
+
+            // Store order in localStorage for the contracts office
+            const existingContracts = JSON.parse(localStorage.getItem('deliveryContracts') || '[]');
+            existingContracts.push(orderData);
+            localStorage.setItem('deliveryContracts', JSON.stringify(existingContracts));
+
+            // Show success message
+            alert(`Order placed successfully!\n\nOrder ID: ${orderData.orderId}\nTotal: ${total.toLocaleString()} SC\n\nYour delivery contract has been created and sent to Downtown Contracts Office for processing.`);
+
+            // Clear cart
+            cart = [];
+            updateCartDisplay();
+            toggleCart();
+        }
+
+        // Initialize store on page load
+        document.addEventListener('DOMContentLoaded', initStore);
+
+        // Web Ring Navigation
+        function navigateWebRing(direction) {
+            const sites = [
+                '../index.html',
+                '../freddies-bar/index.html',
+                '../cosmic-coffee/index.html',
+                '#', // Current site (Acosta Store)
+                '../downtown-contracts/index.html'
+            ];
+            
+            const currentIndex = 3; // Acosta Store is at index 3
+            let targetIndex;
+            
+            if (direction === 'prev') {
+                targetIndex = currentIndex === 0 ? sites.length - 1 : currentIndex - 1;
+            } else if (direction === 'next') {
+                targetIndex = currentIndex === sites.length - 1 ? 0 : currentIndex + 1;
+            }
+            
+            if (sites[targetIndex] !== '#') {
+                window.location.href = sites[targetIndex];
+            }
+        }
+    </script>
+
+    <style>
+        /* Web Ring Styles */
+        .webring-section {
+            background: linear-gradient(135deg, #f4f4f4, #e8e8e8);
+            padding: 3rem 0;
+            margin-top: 2rem;
+            border-top: 3px solid #ff6b35;
+        }
+
+        .webring-section h3 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .webring-navigation {
+            text-align: center;
+        }
+
+        .webring-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .webring-btn {
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .webring-btn:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .webring-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .webring-logo {
+            font-size: 1.5rem;
+        }
+
+        .webring-sites {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 1rem 0;
+        }
+
+        .ring-site {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            background: white;
+            min-width: 100px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ring-site:hover {
+            background: #f8f9fa;
+            transform: translateY(-3px);
+            border-color: #ff6b35;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .ring-site.current {
+            background: #fff5f2;
+            border-color: #ff6b35;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.2);
+        }
+
+        .site-icon {
+            font-size: 1.8rem;
+        }
+
+        .ring-site span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .webring-controls {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .webring-sites {
+                gap: 0.5rem;
+            }
+            
+            .ring-site {
+                min-width: 80px;
+                padding: 0.8rem 0.5rem;
+            }
+        }
+    </style>
+</body>
+</html>

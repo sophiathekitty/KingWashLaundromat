@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downtown Contracts Office - Grindstone Colony</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="contracts-header">
+        <div class="container">
+            <div class="office-logo">
+                <div class="logo-icon">🏢</div>
+                <div class="logo-text">
+                    <h1>Downtown Contracts</h1>
+                    <p>Professional Services & Opportunities</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <a href="#contracts" class="nav-link active" onclick="showSection('contracts')">Contracts</a>
+                <a href="#jobs" class="nav-link" onclick="showSection('jobs')">Jobs</a>
+                <a href="#services" class="nav-link" onclick="showSection('services')">Services</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Status Bar -->
+    <section class="status-bar">
+        <div class="container">
+            <div class="status-info">
+                <div class="status-item">
+                    <span class="status-icon">📋</span>
+                    <span id="active-contracts-count">0</span>
+                    <span>Active Contracts</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-icon">💼</span>
+                    <span id="job-openings-count">0</span>
+                    <span>Job Openings</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-icon">🚚</span>
+                    <span id="pending-deliveries-count">0</span>
+                    <span>Pending Deliveries</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Contracts Section -->
+            <section id="contracts-section" class="content-section active">
+                <div class="section-header">
+                    <h2>Available Contracts</h2>
+                    <div class="contract-filters">
+                        <button class="filter-btn active" onclick="filterContracts('all')">All</button>
+                        <button class="filter-btn" onclick="filterContracts('hauling')">Hauling</button>
+                        <button class="filter-btn" onclick="filterContracts('delivery')">Delivery</button>
+                        <button class="filter-btn" onclick="filterContracts('repair')">Repair</button>
+                        <button class="filter-btn" onclick="filterContracts('municipal')">Municipal</button>
+                    </div>
+                </div>
+
+                <div class="contracts-grid" id="contracts-grid">
+                    <!-- Contracts will be dynamically loaded -->
+                </div>
+            </section>
+
+            <!-- Jobs Section -->
+            <section id="jobs-section" class="content-section">
+                <div class="section-header">
+                    <h2>Job Opportunities</h2>
+                    <div class="job-controls">
+                        <button class="btn-primary" onclick="showPostJobModal()">Post New Job</button>
+                        <div class="job-filters">
+                            <select id="job-filter" onchange="filterJobs()">
+                                <option value="all">All Categories</option>
+                                <option value="retail">Retail</option>
+                                <option value="food-service">Food Service</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="security">Security</option>
+                                <option value="administrative">Administrative</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jobs-grid" id="jobs-grid">
+                    <!-- Jobs will be dynamically loaded -->
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services-section" class="content-section">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📋</div>
+                        <h3>Contract Management</h3>
+                        <p>Professional contract creation, review, and management services for businesses and individuals.</p>
+                        <ul class="service-features">
+                            <li>Contract drafting and review</li>
+                            <li>Legal compliance verification</li>
+                            <li>Digital signatures and notarization</li>
+                            <li>Contract dispute resolution</li>
+                        </ul>
+                        <div class="service-price">Starting at 500 SC</div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🚚</div>
+                        <h3>Delivery Coordination</h3>
+                        <p>Efficient delivery and logistics coordination for local businesses and municipal services.</p>
+                        <ul class="service-features">
+                            <li>Route optimization</li>
+                            <li>Delivery tracking</li>
+                            <li>Insurance and liability coverage</li>
+                            <li>Same-day delivery options</li>
+                        </ul>
+                        <div class="service-price">2% of delivery value</div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">💼</div>
+                        <h3>Employment Services</h3>
+                        <p>Comprehensive job placement and workforce management solutions for Downtown Grindstone.</p>
+                        <ul class="service-features">
+                            <li>Job posting and screening</li>
+                            <li>Background checks</li>
+                            <li>Payroll processing</li>
+                            <li>HR consulting</li>
+                        </ul>
+                        <div class="service-price">300 SC per placement</div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3>Municipal Coordination</h3>
+                        <p>Liaison services between local businesses and Grindstone Colony municipal government.</p>
+                        <ul class="service-features">
+                            <li>Permit applications</li>
+                            <li>Regulatory compliance</li>
+                            <li>Municipal contract coordination</li>
+                            <li>Infrastructure planning</li>
+                        </ul>
+                        <div class="service-price">Consultation rates vary</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Post Job Modal -->
+    <div id="post-job-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Post New Job Opening</h3>
+                <button class="modal-close" onclick="closePostJobModal()">&times;</button>
+            </div>
+            <form id="job-form" class="modal-body">
+                <div class="form-group">
+                    <label for="job-title">Job Title *</label>
+                    <input type="text" id="job-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="company-name">Company Name *</label>
+                    <input type="text" id="company-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="job-category">Category *</label>
+                    <select id="job-category" required>
+                        <option value="">Select Category</option>
+                        <option value="retail">Retail</option>
+                        <option value="food-service">Food Service</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="security">Security</option>
+                        <option value="administrative">Administrative</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="job-salary">Salary Range *</label>
+                    <input type="text" id="job-salary" placeholder="e.g., 2000-3000 SC/month" required>
+                </div>
+                <div class="form-group">
+                    <label for="job-description">Job Description *</label>
+                    <textarea id="job-description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="job-requirements">Requirements</label>
+                    <textarea id="job-requirements" rows="3" placeholder="List any specific requirements or qualifications"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="job-contact">Contact Information *</label>
+                    <input type="text" id="job-contact" placeholder="How applicants should contact you" required>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closePostJobModal()">Cancel</button>
+                <button type="button" class="btn-primary" onclick="submitJob()">Post Job (100 SC)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contract Details Modal -->
+    <div id="contract-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="contract-modal-title">Contract Details</h3>
+                <button class="modal-close" onclick="closeContractModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="contract-modal-body">
+                <!-- Contract details will be populated dynamically -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeContractModal()">Close</button>
+                <button type="button" class="btn-primary" id="accept-contract-btn" onclick="acceptContract()">Accept Contract</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Community Web Ring -->
+    <section class="webring-section">
+        <div class="container">
+            <h3>Downtown Grindstone Web Ring</h3>
+            <div class="webring-navigation">
+                <div class="webring-controls">
+                    <button class="webring-btn prev" onclick="navigateWebRing('prev')">← Previous Site</button>
+                    <div class="webring-info">
+                        <div class="webring-logo">🌐</div>
+                        <span>Downtown Grindstone Ring</span>
+                    </div>
+                    <button class="webring-btn next" onclick="navigateWebRing('next')">Next Site →</button>
+                </div>
+                
+                <div class="webring-sites">
+                    <a href="../index.html" class="ring-site">
+                        <div class="site-icon">👑</div>
+                        <span>King Wash</span>
+                    </a>
+                    <a href="../freddies-bar/index.html" class="ring-site">
+                        <div class="site-icon">🍺</div>
+                        <span>Freddie's Bar</span>
+                    </a>
+                    <a href="../cosmic-coffee/index.html" class="ring-site">
+                        <div class="site-icon">☕</div>
+                        <span>Cosmic Coffee</span>
+                    </a>
+                    <a href="../acosta-store/index.html" class="ring-site">
+                        <div class="site-icon">🛒</div>
+                        <span>Acosta Store</span>
+                    </a>
+                    <a href="#" class="ring-site current">
+                        <div class="site-icon">🏢</div>
+                        <span>Downtown Contracts</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="contracts-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">🏢</div>
+                        <span>Downtown Contracts</span>
+                    </div>
+                    <p>Professional services for the Downtown Grindstone business community</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#contracts">Contract Management</a></li>
+                        <li><a href="#jobs">Employment Services</a></li>
+                        <li><a href="#delivery">Delivery Coordination</a></li>
+                        <li><a href="#municipal">Municipal Liaison</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community Partners</h4>
+                    <ul>
+                        <li><a href="../index.html">King Wash Laundromat</a></li>
+                        <li><a href="../acosta-store/index.html">Acosta Store</a></li>
+                        <li><a href="../freddies-bar/index.html">Freddie's Bar</a></li>
+                        <li><a href="../cosmic-coffee/index.html">Cosmic Coffee</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Grindstone Business Center<br>Downtown Grindstone</p>
+                    <p class="office-hours">Mon-Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2077 Downtown Contracts Office. Licensed by Grindstone Colony Administration.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="contracts.js"></script>
+</body>
+</html>

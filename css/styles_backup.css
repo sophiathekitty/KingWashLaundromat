@@ -1,0 +1,184 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    background-color: #003366;
+    color: white;
+    padding: 1rem 0.5rem;
+}
+
+header .logo img {
+    max-width: 100px;
+}
+
+nav {
+    background-color: #0055aa;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    flex: 3;
+    padding: 1rem;
+}
+
+main h2 {
+    color: #0055aa;
+}
+
+main ul {
+    list-style: square inside;
+    padding-left: 1rem;
+}
+
+main .button {
+    display: inline-block;
+    background-color: #003366;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+main .button:hover {
+    background-color: #0055aa;
+}
+
+aside.sidebar {
+    flex: 1.5;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-left: 2px solid #ddd;
+}
+
+aside.sidebar h3 {
+    color: #003366;
+}
+
+aside.sidebar img {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    background-color: #003366;
+    color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+a#GPS {
+    color: #0055aa;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Glitch effect for company name */
+.glitch-text {
+    color: #0055aa;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.glitch-text:hover {
+    animation: glitch 0.5s infinite;
+}
+
+.glitch-text.glitching {
+    animation: glitch 0.1s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+        filter: hue-rotate(0deg);
+    }
+    10% {
+        transform: translate(-2px, 2px);
+        filter: hue-rotate(90deg);
+    }
+    20% {
+        transform: translate(-1px, -1px);
+        filter: hue-rotate(180deg);
+    }
+    30% {
+        transform: translate(1px, 1px);
+        filter: hue-rotate(270deg);
+    }
+    40% {
+        transform: translate(2px, -2px);
+        filter: hue-rotate(360deg);
+    }
+    50% {
+        transform: translate(-1px, 2px);
+        filter: hue-rotate(45deg);
+    }
+    60% {
+        transform: translate(-2px, 1px);
+        filter: hue-rotate(135deg);
+    }
+    70% {
+        transform: translate(2px, 1px);
+        filter: hue-rotate(225deg);
+    }
+    80% {
+        transform: translate(-1px, -1px);
+        filter: hue-rotate(315deg);
+    }
+    90% {
+        transform: translate(1px, 2px);
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        transform: translate(0);
+        filter: hue-rotate(0deg);
+    }
+}

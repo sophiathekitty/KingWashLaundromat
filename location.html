@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location & Hours - King Wash Laundromat | Grindstone Colony</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Fixed Arcade Banner -->
+    <div class="arcade-banner">
+        <div class="arcade-banner-content">
+            <div class="arcade-icon">🕹️</div>
+            <div class="arcade-text">
+                <span class="arcade-title">Retro Arcade</span>
+                <span class="arcade-subtitle">While you wait</span>
+            </div>
+            <a href="arcade/index.html" class="arcade-button">Play Now</a>
+        </div>
+    </div>
+
+    <header class="luxury-header">
+        <nav class="main-nav">
+            <div class="nav-logo">
+                <img src="img/logo-gold.png" alt="King Wash" class="logo-img">
+                <span class="logo-text">King Wash</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="rewards.html" class="nav-link">Rewards</a></li>
+                <li><a href="location.html" class="nav-link active">Location</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Location & Hours</h1>
+            <p>Find us in the heart of Downtown Grindstone</p>
+        </div>
+    </section>
+
+    <!-- Location Hero -->
+    <section class="location-hero">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-info">
+                    <h2>Visit King Wash</h2>
+                    <div class="address-card">
+                        <div class="address-icon">📍</div>
+                        <div class="address-details">
+                            <h3>King Wash Laundromat</h3>
+                            <p>Downtown Grindstone<br>
+                            Earth Like Planet<br>
+                            Grindstone Colony</p>
+                            <div class="coordinates-section">
+                                <strong>GPS Coordinates:</strong>
+                                <div class="coordinates-display">
+                                    <span class="coord-text">12593.82 : 11777.22 : -58311.1</span>
+                                    <button class="copy-btn" onclick="copyGPS('GPS:King Wash:12593.82:11777.22:-58311.1:#FF75C9F1:')">📋 Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="current-status" id="current-status">
+                        <div class="status-indicator" id="status-indicator"></div>
+                        <span id="status-text">Checking hours...</span>
+                    </div>
+                </div>
+                
+                <div class="location-image">
+                    <img src="img/photo5.jpg" alt="King Wash Laundromat Building" class="building-photo">
+                    <div class="image-caption">Our welcoming storefront in Downtown Grindstone</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section class="hours-section">
+        <div class="container">
+            <h2 class="section-title">Operating Hours</h2>
+            <div class="hours-grid">
+                <div class="hours-card">
+                    <h3>Regular Hours</h3>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="day">Monday - Friday</span>
+                            <span class="time">6:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Saturday</span>
+                            <span class="time">7:00 AM - 9:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Sunday</span>
+                            <span class="time">8:00 AM - 8:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hours-card special">
+                    <h3>Arcade Hours</h3>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="day">All Days</span>
+                            <span class="time">Same as laundromat</span>
+                        </div>
+                        <div class="hours-note">
+                            <span class="note-icon">🎮</span>
+                            <span class="note-text">Free arcade access for all customers while using our laundry services</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hours-card holiday">
+                    <h3>Holiday Schedule</h3>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="day">New Year's Day</span>
+                            <span class="time">10:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Colony Day</span>
+                            <span class="time">Closed</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Harvest Festival</span>
+                            <span class="time">8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-note">
+                            <span class="note-icon">📅</span>
+                            <span class="note-text">Holiday hours may vary. Check our status indicator above for real-time information.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facility Features -->
+    <section class="facility-section">
+        <div class="container">
+            <h2 class="section-title">Our Facility</h2>
+            <div class="facility-grid">
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="img/photo1.jpg" alt="Modern washing machines">
+                    </div>
+                    <div class="facility-content">
+                        <h3>High-Tech Washing</h3>
+                        <p>State-of-the-art washing machines with multiple capacity options and advanced cleaning cycles.</p>
+                        <ul class="facility-features">
+                            <li>8kg to 25kg capacity options</li>
+                            <li>Eco-friendly detergent dispensers</li>
+                            <li>Touch-screen controls</li>
+                            <li>Energy-efficient technology</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="img/photo2.jpg" alt="Professional dryers">
+                    </div>
+                    <div class="facility-content">
+                        <h3>Professional Drying</h3>
+                        <p>Large-capacity dryers with precise temperature control and wrinkle-prevention technology.</p>
+                        <ul class="facility-features">
+                            <li>Quick-dry and delicate cycles</li>
+                            <li>Anti-wrinkle steam finishing</li>
+                            <li>Large capacity drums</li>
+                            <li>Automatic lint removal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="img/photo7.jpg" alt="Comfortable seating area">
+                    </div>
+                    <div class="facility-content">
+                        <h3>Comfort Zone</h3>
+                        <p>Relax in our comfortable seating area with amenities to make your visit pleasant.</p>
+                        <ul class="facility-features">
+                            <li>Plush seating and tables</li>
+                            <li>Free high-speed Wi-Fi</li>
+                            <li>Climate-controlled environment</li>
+                            <li>Charging stations for devices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parking & Accessibility -->
+    <section class="access-section">
+        <div class="container">
+            <div class="access-grid">
+                <div class="access-card">
+                    <div class="access-icon">🚗</div>
+                    <h3>Parking</h3>
+                    <ul class="access-list">
+                        <li>Free customer parking available</li>
+                        <li>Large vehicle spaces for families</li>
+                        <li>Well-lit parking area</li>
+                        <li>Security monitoring</li>
+                        <li>Easy loading and unloading zones</li>
+                    </ul>
+                </div>
+
+                <div class="access-card">
+                    <div class="access-icon">♿</div>
+                    <h3>Accessibility</h3>
+                    <ul class="access-list">
+                        <li>Wheelchair accessible entrance</li>
+                        <li>Accessible parking spaces</li>
+                        <li>Wide aisles between machines</li>
+                        <li>Accessible restroom facilities</li>
+                        <li>Low-height folding tables</li>
+                    </ul>
+                </div>
+
+                <div class="access-card">
+                    <div class="access-icon">🛡️</div>
+                    <h3>Safety & Security</h3>
+                    <ul class="access-list">
+                        <li>24/7 security monitoring</li>
+                        <li>Well-lit facility and parking</li>
+                        <li>Emergency communication system</li>
+                        <li>Regular safety inspections</li>
+                        <li>Staff present during all hours</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directions -->
+    <section class="directions-section">
+        <div class="container">
+            <h2 class="section-title">Getting Here</h2>
+            <div class="directions-grid">
+                <div class="directions-card">
+                    <h3>From Residential District</h3>
+                    <div class="directions-steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <span class="step-text">Head south on Main Colony Road</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <span class="step-text">Turn left at Grindstone Plaza</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <span class="step-text">King Wash will be on your right</span>
+                        </div>
+                    </div>
+                    <div class="travel-time">🕒 Estimated travel time: 8-12 minutes</div>
+                </div>
+
+                <div class="directions-card">
+                    <h3>From Industrial Zone</h3>
+                    <div class="directions-steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <span class="step-text">Exit Industrial Zone via East Gate</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <span class="step-text">Follow Colony Highway to downtown</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <span class="step-text">Turn right at Grindstone Square</span>
+                        </div>
+                    </div>
+                    <div class="travel-time">🕒 Estimated travel time: 15-20 minutes</div>
+                </div>
+
+                <div class="directions-card featured">
+                    <h3>GPS Navigation</h3>
+                    <p>For the most accurate directions, use these coordinates with your navigation system:</p>
+                    <div class="gps-display">
+                        <code>GPS:King Wash:12593.82:11777.22:-58311.1:#FF75C9F1:</code>
+                    </div>
+                    <button class="gps-button" onclick="copyGPS('GPS:King Wash:12593.82:11777.22:-58311.1:#FF75C9F1:')">
+                        📱 Copy GPS Coordinates
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="img/logo-gold.png" alt="King Wash">
+                        <span>King Wash</span>
+                    </div>
+                    <p>Premium laundry services in Grindstone Colony</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Location</h4>
+                    <ul>
+                        <li><a href="#hours">Operating Hours</a></li>
+                        <li><a href="#facility">Facility Features</a></li>
+                        <li><a href="#parking">Parking & Access</a></li>
+                        <li><a href="#directions">Directions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="rewards.html">Rewards Program</a></li>
+                        <li><a href="community.html">Community Partners</a></li>
+                        <li><a href="arcade/index.html">Arcade Games</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Downtown Grindstone<br>Earth Like Planet</p>
+                    <p class="coordinates">
+                        <a href="#" onclick="copyGPS('GPS:King Wash:12593.82:11777.22:-58311.1:#FF75C9F1:')">
+                            📍 GPS Coordinates
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2077 King Wash Laundromat. Powered by <span class="glitch-text" id="company-name">Grindstone Enterprises</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Copy GPS coordinates functionality
+        function copyGPS(gpsString) {
+            navigator.clipboard.writeText(gpsString).then(() => {
+                alert('GPS coordinates copied to clipboard!');
+            }).catch(() => {
+                prompt('Copy these GPS coordinates:', gpsString);
+            });
+        }
+
+        // Real-time status checking
+        function updateStatus() {
+            const now = new Date();
+            const day = now.getDay();
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+            
+            const statusIndicator = document.getElementById('status-indicator');
+            const statusText = document.getElementById('status-text');
+            
+            let isOpen = false;
+            let nextChange = '';
+            
+            // Check if currently open
+            if (day === 0) { // Sunday
+                isOpen = hour >= 8 && hour < 20;
+                nextChange = isOpen ? '8:00 PM today' : (hour < 8 ? '8:00 AM today' : '6:00 AM tomorrow');
+            } else if (day === 6) { // Saturday
+                isOpen = hour >= 7 && hour < 21;
+                nextChange = isOpen ? '9:00 PM today' : (hour < 7 ? '7:00 AM today' : '8:00 AM tomorrow');
+            } else { // Weekdays
+                isOpen = hour >= 6 && hour < 22;
+                nextChange = isOpen ? '10:00 PM today' : (hour < 6 ? '6:00 AM today' : '6:00 AM tomorrow');
+            }
+            
+            if (isOpen) {
+                statusIndicator.className = 'status-indicator open';
+                statusText.innerHTML = `<strong>Open Now</strong> - Closes at ${nextChange}`;
+            } else {
+                statusIndicator.className = 'status-indicator closed';
+                statusText.innerHTML = `<strong>Closed</strong> - Opens at ${nextChange}`;
+            }
+        }
+
+        // Glitch effect for company name
+        const companyName = document.getElementById('company-name');
+        let isGlitched = false;
+        
+        companyName.addEventListener('mouseenter', function() {
+            if (!isGlitched) {
+                this.classList.add('glitching');
+                
+                setTimeout(() => {
+                    this.textContent = 'Null Systems';
+                    this.style.color = '#d4af37';
+                    this.classList.remove('glitching');
+                    isGlitched = true;
+                    
+                    const link = document.createElement('a');
+                    link.href = 'https://sophiathekitty.github.io/GridDB/index.html';
+                    link.target = '_blank';
+                    link.className = 'glitch-text';
+                    link.style.color = '#d4af37';
+                    link.style.textDecoration = 'none';
+                    link.textContent = 'Null Systems';
+                    
+                    this.parentNode.replaceChild(link, this);
+                }, 500);
+            }
+        });
+
+        // Initialize status on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateStatus();
+            // Update status every minute
+            setInterval(updateStatus, 60000);
+        });
+    </script>
+
+    <style>
+        /* Additional styles for location page */
+        .page-header {
+            background: var(--gradient-navy);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--gold-primary);
+        }
+
+        .location-hero {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .address-card {
+            background: var(--cream);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--gold-light);
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .address-icon {
+            font-size: 3rem;
+        }
+
+        .address-details h3 {
+            color: var(--navy-primary);
+            margin-bottom: 1rem;
+        }
+
+        .coordinates-section {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gold-light);
+        }
+
+        .coordinates-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .coord-text {
+            font-family: 'Courier New', monospace;
+            background: var(--white);
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid var(--gold-light);
+        }
+
+        .copy-btn {
+            background: var(--gradient-gold);
+            color: var(--navy-primary);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow-medium);
+        }
+
+        .current-status {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 10px;
+            border: 2px solid var(--gold-light);
+        }
+
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator.open {
+            background: #4CAF50;
+        }
+
+        .status-indicator.closed {
+            background: #f44336;
+        }
+
+        .building-photo {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+        }
+
+        .image-caption {
+            text-align: center;
+            margin-top: 1rem;
+            font-style: italic;
+            color: var(--navy-light);
+        }
+
+        .hours-section {
+            background: var(--cream);
+            padding: 4rem 0;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .hours-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--gold-light);
+            transition: all 0.3s ease;
+        }
+
+        .hours-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px var(--shadow-light);
+        }
+
+        .hours-card.special {
+            border-color: #ff6600;
+            background: linear-gradient(135deg, #fff0e6, var(--white));
+        }
+
+        .hours-card.holiday {
+            border-color: var(--gold-primary);
+            background: var(--gradient-gold);
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .day {
+            font-weight: bold;
+        }
+
+        .time {
+            color: var(--gold-dark);
+            font-weight: bold;
+        }
+
+        .hours-note {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+        }
+
+        .note-icon {
+            font-size: 1.5rem;
+        }
+
+        .facility-section {
+            background: var(--navy-light);
+            color: var(--white);
+            padding: 4rem 0;
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .facility-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            background: var(--white);
+            color: var(--navy-primary);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px var(--shadow-medium);
+        }
+
+        .facility-card:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .facility-card:nth-child(even) .facility-image {
+            order: 2;
+        }
+
+        .facility-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .facility-features {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .facility-features li {
+            padding: 0.25rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .facility-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold-primary);
+            font-weight: bold;
+        }
+
+        .access-section {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
+        .access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .access-card {
+            background: var(--cream);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--gold-light);
+            transition: all 0.3s ease;
+        }
+
+        .access-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px var(--shadow-light);
+        }
+
+        .access-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .access-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .access-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .access-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold-primary);
+            font-weight: bold;
+        }
+
+        .directions-section {
+            background: var(--cream);
+            padding: 4rem 0;
+        }
+
+        .directions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .directions-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--gold-light);
+            transition: all 0.3s ease;
+        }
+
+        .directions-card.featured {
+            border-color: var(--gold-primary);
+            background: var(--gradient-gold);
+        }
+
+        .directions-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px var(--shadow-light);
+        }
+
+        .directions-steps {
+            margin: 1.5rem 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-number {
+            background: var(--gold-primary);
+            color: var(--navy-primary);
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .travel-time {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-weight: bold;
+            color: var(--gold-dark);
+        }
+
+        .gps-display {
+            background: var(--navy-primary);
+            color: var(--gold-light);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            word-break: break-all;
+        }
+
+        .gps-button {
+            background: var(--navy-primary);
+            color: var(--gold-light);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .gps-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--shadow-medium);
+        }
+
+        @media (max-width: 768px) {
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .facility-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .facility-card:nth-child(even) .facility-image {
+                order: 0;
+            }
+            
+            .directions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

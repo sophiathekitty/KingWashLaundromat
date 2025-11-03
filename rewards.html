@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards Program - King Wash Laundromat | Grindstone Colony</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Fixed Arcade Banner -->
+    <div class="arcade-banner">
+        <div class="arcade-banner-content">
+            <div class="arcade-icon">🕹️</div>
+            <div class="arcade-text">
+                <span class="arcade-title">Retro Arcade</span>
+                <span class="arcade-subtitle">While you wait</span>
+            </div>
+            <a href="arcade/index.html" class="arcade-button">Play Now</a>
+        </div>
+    </div>
+
+    <header class="luxury-header">
+        <nav class="main-nav">
+            <div class="nav-logo">
+                <img src="img/logo-gold.png" alt="King Wash" class="logo-img">
+                <span class="logo-text">King Wash</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="rewards.html" class="nav-link active">Rewards</a></li>
+                <li><a href="location.html" class="nav-link">Location</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>King Wash Rewards</h1>
+            <p>Earn points, save money, and enjoy exclusive benefits</p>
+        </div>
+    </section>
+
+    <!-- Rewards Dashboard -->
+    <section class="rewards-dashboard">
+        <div class="container">
+            <div class="dashboard-grid">
+                <!-- Member Status Card -->
+                <div class="status-card" id="member-status">
+                    <div class="status-header">
+                        <div class="status-icon">👑</div>
+                        <div class="status-info">
+                            <h3 id="member-name">Welcome, Valued Customer!</h3>
+                            <p id="member-tier">Join our rewards program today</p>
+                        </div>
+                    </div>
+                    <div class="status-details" id="member-details" style="display: none;">
+                        <div class="detail-item">
+                            <span class="detail-label">Current Points:</span>
+                            <span class="detail-value" id="current-points">0</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Total Visits:</span>
+                            <span class="detail-value" id="total-visits">0</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Member Since:</span>
+                            <span class="detail-value" id="member-since">N/A</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Next Reward:</span>
+                            <span class="detail-value" id="next-reward">N/A</span>
+                        </div>
+                    </div>
+                    <div class="status-actions">
+                        <button id="join-btn" class="reward-button primary">Join Rewards</button>
+                        <button id="manage-btn" class="reward-button secondary" style="display: none;">Manage Account</button>
+                    </div>
+                </div>
+
+                <!-- Points Summary -->
+                <div class="points-card">
+                    <div class="points-header">
+                        <h3>Points Balance</h3>
+                        <div class="points-total" id="points-display">0</div>
+                    </div>
+                    <div class="points-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <p class="progress-text" id="progress-text">Earn 100 points for your first free wash!</p>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="actions-card">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="action-button" onclick="addPoints(10)">
+                            <span class="action-icon">👕</span>
+                            <span class="action-text">Log Wash (10 pts)</span>
+                        </button>
+                        <button class="action-button" onclick="addPoints(5)">
+                            <span class="action-icon">🌪️</span>
+                            <span class="action-text">Log Dry (5 pts)</span>
+                        </button>
+                        <button class="action-button" onclick="addPoints(20)">
+                            <span class="action-icon">📦</span>
+                            <span class="action-text">Wash & Fold (20 pts)</span>
+                        </button>
+                        <button class="action-button" onclick="redeemReward()">
+                            <span class="action-icon">🎁</span>
+                            <span class="action-text">Redeem Reward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Programs -->
+    <section class="programs-section">
+        <div class="container">
+            <h2 class="section-title">Loyalty Programs</h2>
+            <div class="programs-grid">
+                <!-- Basic Rewards -->
+                <div class="program-card basic">
+                    <div class="program-header">
+                        <div class="program-icon">🥉</div>
+                        <h3>Clean Slate</h3>
+                        <p class="program-subtitle">Basic Rewards</p>
+                    </div>
+                    <div class="program-benefits">
+                        <ul>
+                            <li>Earn 1 point per 1 SC spent</li>
+                            <li>Free wash at 100 points</li>
+                            <li>Birthday bonus: 25 points</li>
+                            <li>Member-only promotions</li>
+                        </ul>
+                    </div>
+                    <div class="program-action">
+                        <button class="program-button" onclick="joinProgram('basic')">Join Free</button>
+                    </div>
+                </div>
+
+                <!-- Premium Rewards -->
+                <div class="program-card premium featured">
+                    <div class="program-badge">Popular</div>
+                    <div class="program-header">
+                        <div class="program-icon">🥈</div>
+                        <h3>Golden Rinse</h3>
+                        <p class="program-subtitle">Premium Rewards</p>
+                    </div>
+                    <div class="program-benefits">
+                        <ul>
+                            <li>Earn 1.5 points per 1 SC spent</li>
+                            <li>Free wash at 75 points</li>
+                            <li>Priority wash & fold service</li>
+                            <li>Monthly 20% off coupon</li>
+                            <li>Free arcade credits</li>
+                        </ul>
+                    </div>
+                    <div class="program-action">
+                        <button class="program-button" onclick="joinProgram('premium')">Join for 50 SC/month</button>
+                    </div>
+                </div>
+
+                <!-- VIP Rewards -->
+                <div class="program-card vip">
+                    <div class="program-badge">Exclusive</div>
+                    <div class="program-header">
+                        <div class="program-icon">🥇</div>
+                        <h3>Royal Wash</h3>
+                        <p class="program-subtitle">VIP Experience</p>
+                    </div>
+                    <div class="program-benefits">
+                        <ul>
+                            <li>Earn 2 points per 1 SC spent</li>
+                            <li>Free premium service at 50 points</li>
+                            <li>Reserved seating area</li>
+                            <li>Personal laundry consultant</li>
+                            <li>Unlimited arcade access</li>
+                            <li>Community partner discounts</li>
+                        </ul>
+                    </div>
+                    <div class="program-action">
+                        <button class="program-button" onclick="joinProgram('vip')">Join for 150 SC/month</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Management -->
+    <section class="data-section">
+        <div class="container">
+            <h2 class="section-title">Account Management</h2>
+            <div class="data-grid">
+                <div class="data-card">
+                    <h3>Your Data</h3>
+                    <p>View and manage the information we store about your rewards account.</p>
+                    <div class="data-list" id="data-list">
+                        <div class="data-item">
+                            <span class="data-key">Membership Status:</span>
+                            <span class="data-value" id="data-status">Not enrolled</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-key">Points Balance:</span>
+                            <span class="data-value" id="data-points">0</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-key">Visit History:</span>
+                            <span class="data-value" id="data-visits">None recorded</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-key">Last Visit:</span>
+                            <span class="data-value" id="data-last-visit">Never</span>
+                        </div>
+                    </div>
+                    <div class="data-actions">
+                        <button class="data-button" onclick="downloadData()">Download My Data</button>
+                        <button class="data-button danger" onclick="clearAllData()">Clear All Data</button>
+                    </div>
+                </div>
+
+                <div class="privacy-card">
+                    <h3>Privacy & Security</h3>
+                    <p>Your privacy matters to us. Here's how we protect your information.</p>
+                    <div class="privacy-list">
+                        <div class="privacy-item">
+                            <span class="privacy-icon">🔒</span>
+                            <span class="privacy-text">All data stored locally in your browser</span>
+                        </div>
+                        <div class="privacy-item">
+                            <span class="privacy-icon">🚫</span>
+                            <span class="privacy-text">No personal information shared</span>
+                        </div>
+                        <div class="privacy-item">
+                            <span class="privacy-icon">🗑️</span>
+                            <span class="privacy-text">Clear data anytime</span>
+                        </div>
+                        <div class="privacy-item">
+                            <span class="privacy-icon">📱</span>
+                            <span class="privacy-text">Works offline</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="img/logo-gold.png" alt="King Wash">
+                        <span>King Wash</span>
+                    </div>
+                    <p>Premium laundry services in Grindstone Colony</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Rewards</h4>
+                    <ul>
+                        <li><a href="#basic">Clean Slate Program</a></li>
+                        <li><a href="#premium">Golden Rinse Program</a></li>
+                        <li><a href="#vip">Royal Wash Program</a></li>
+                        <li><a href="#data">Data Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="location.html">Location & Hours</a></li>
+                        <li><a href="community.html">Community Partners</a></li>
+                        <li><a href="arcade/index.html">Arcade Games</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Downtown Grindstone<br>Earth Like Planet</p>
+                    <p class="coordinates">
+                        <a href="#" onclick="copyGPS('GPS:King Wash:12593.82:11777.22:-58311.1:#FF75C9F1:')">
+                            📍 GPS Coordinates
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2077 King Wash Laundromat. Powered by <span class="glitch-text" id="company-name">Grindstone Enterprises</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Rewards System Management
+        class RewardsManager {
+            constructor() {
+                this.storageKey = 'kingWashRewards';
+                this.loadRewardsData();
+                this.updateDisplay();
+            }
+
+            loadRewardsData() {
+                const saved = localStorage.getItem(this.storageKey);
+                this.data = saved ? JSON.parse(saved) : {
+                    isEnrolled: false,
+                    memberName: '',
+                    program: '',
+                    points: 0,
+                    totalVisits: 0,
+                    joinDate: null,
+                    lastVisit: null,
+                    visitHistory: []
+                };
+            }
+
+            saveRewardsData() {
+                localStorage.setItem(this.storageKey, JSON.stringify(this.data));
+                this.updateDisplay();
+                this.updateDataDisplay();
+            }
+
+            joinProgram(programType) {
+                const name = prompt('Enter your name to join the rewards program:');
+                if (name) {
+                    this.data = {
+                        isEnrolled: true,
+                        memberName: name,
+                        program: programType,
+                        points: 0,
+                        totalVisits: 0,
+                        joinDate: new Date().toLocaleDateString(),
+                        lastVisit: null,
+                        visitHistory: []
+                    };
+                    this.saveRewardsData();
+                    alert(`Welcome to King Wash Rewards, ${name}! You've joined the ${this.getProgramName(programType)} program.`);
+                }
+            }
+
+            getProgramName(type) {
+                const names = {
+                    basic: 'Clean Slate',
+                    premium: 'Golden Rinse',
+                    vip: 'Royal Wash'
+                };
+                return names[type] || type;
+            }
+
+            addPoints(amount) {
+                if (!this.data.isEnrolled) {
+                    alert('Please join our rewards program first!');
+                    return;
+                }
+
+                // Apply multipliers based on program
+                const multipliers = { basic: 1, premium: 1.5, vip: 2 };
+                const multiplier = multipliers[this.data.program] || 1;
+                const actualPoints = Math.floor(amount * multiplier);
+
+                this.data.points += actualPoints;
+                this.data.totalVisits++;
+                this.data.lastVisit = new Date().toLocaleDateString();
+                this.data.visitHistory.push({
+                    date: new Date().toLocaleDateString(),
+                    points: actualPoints,
+                    action: 'Service completed'
+                });
+
+                this.saveRewardsData();
+                alert(`+${actualPoints} points earned! Total: ${this.data.points} points`);
+            }
+
+            redeemReward() {
+                if (!this.data.isEnrolled) {
+                    alert('Please join our rewards program first!');
+                    return;
+                }
+
+                const rewardCosts = { basic: 100, premium: 75, vip: 50 };
+                const cost = rewardCosts[this.data.program] || 100;
+
+                if (this.data.points >= cost) {
+                    this.data.points -= cost;
+                    this.data.visitHistory.push({
+                        date: new Date().toLocaleDateString(),
+                        points: -cost,
+                        action: 'Free wash redeemed'
+                    });
+                    this.saveRewardsData();
+                    alert(`Congratulations! You've redeemed a free wash. Remaining points: ${this.data.points}`);
+                } else {
+                    alert(`You need ${cost - this.data.points} more points for a free wash.`);
+                }
+            }
+
+            updateDisplay() {
+                const memberName = document.getElementById('member-name');
+                const memberTier = document.getElementById('member-tier');
+                const memberDetails = document.getElementById('member-details');
+                const joinBtn = document.getElementById('join-btn');
+                const manageBtn = document.getElementById('manage-btn');
+                const pointsDisplay = document.getElementById('points-display');
+                const currentPoints = document.getElementById('current-points');
+                const totalVisits = document.getElementById('total-visits');
+                const memberSince = document.getElementById('member-since');
+                const nextReward = document.getElementById('next-reward');
+                const progressFill = document.getElementById('progress-fill');
+                const progressText = document.getElementById('progress-text');
+
+                if (this.data.isEnrolled) {
+                    memberName.textContent = `Welcome back, ${this.data.memberName}!`;
+                    memberTier.textContent = `${this.getProgramName(this.data.program)} Member`;
+                    memberDetails.style.display = 'block';
+                    joinBtn.style.display = 'none';
+                    manageBtn.style.display = 'inline-block';
+
+                    pointsDisplay.textContent = this.data.points;
+                    currentPoints.textContent = this.data.points;
+                    totalVisits.textContent = this.data.totalVisits;
+                    memberSince.textContent = this.data.joinDate;
+
+                    const rewardCosts = { basic: 100, premium: 75, vip: 50 };
+                    const cost = rewardCosts[this.data.program] || 100;
+                    const remaining = cost - this.data.points;
+                    
+                    if (remaining <= 0) {
+                        nextReward.textContent = 'Free wash available!';
+                        progressText.textContent = 'You have a free wash ready to redeem!';
+                        progressFill.style.width = '100%';
+                    } else {
+                        nextReward.textContent = `${remaining} points to free wash`;
+                        progressText.textContent = `${remaining} more points until your next free wash`;
+                        progressFill.style.width = `${(this.data.points / cost) * 100}%`;
+                    }
+                } else {
+                    memberName.textContent = 'Welcome, Valued Customer!';
+                    memberTier.textContent = 'Join our rewards program today';
+                    memberDetails.style.display = 'none';
+                    joinBtn.style.display = 'inline-block';
+                    manageBtn.style.display = 'none';
+                    pointsDisplay.textContent = '0';
+                    progressFill.style.width = '0%';
+                    progressText.textContent = 'Earn 100 points for your first free wash!';
+                }
+            }
+
+            updateDataDisplay() {
+                document.getElementById('data-status').textContent = this.data.isEnrolled ? 
+                    `${this.getProgramName(this.data.program)} Member` : 'Not enrolled';
+                document.getElementById('data-points').textContent = this.data.points;
+                document.getElementById('data-visits').textContent = this.data.totalVisits || 'None recorded';
+                document.getElementById('data-last-visit').textContent = this.data.lastVisit || 'Never';
+            }
+
+            downloadData() {
+                const dataStr = JSON.stringify(this.data, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'king-wash-rewards-data.json';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            }
+
+            clearAllData() {
+                if (confirm('Are you sure you want to clear all your rewards data? This cannot be undone.')) {
+                    localStorage.removeItem(this.storageKey);
+                    this.data = {
+                        isEnrolled: false,
+                        memberName: '',
+                        program: '',
+                        points: 0,
+                        totalVisits: 0,
+                        joinDate: null,
+                        lastVisit: null,
+                        visitHistory: []
+                    };
+                    this.updateDisplay();
+                    this.updateDataDisplay();
+                    alert('All rewards data has been cleared.');
+                }
+            }
+        }
+
+        // Initialize rewards system
+        const rewardsManager = new RewardsManager();
+
+        // Global functions for buttons
+        function joinProgram(type) {
+            rewardsManager.joinProgram(type);
+        }
+
+        function addPoints(amount) {
+            rewardsManager.addPoints(amount);
+        }
+
+        function redeemReward() {
+            rewardsManager.redeemReward();
+        }
+
+        function downloadData() {
+            rewardsManager.downloadData();
+        }
+
+        function clearAllData() {
+            rewardsManager.clearAllData();
+        }
+
+        // Copy GPS coordinates functionality
+        function copyGPS(gpsString) {
+            navigator.clipboard.writeText(gpsString).then(() => {
+                alert('GPS coordinates copied to clipboard!');
+            }).catch(() => {
+                prompt('Copy these GPS coordinates:', gpsString);
+            });
+        }
+
+        // Glitch effect for company name
+        const companyName = document.getElementById('company-name');
+        let isGlitched = false;
+        
+        companyName.addEventListener('mouseenter', function() {
+            if (!isGlitched) {
+                this.classList.add('glitching');
+                
+                setTimeout(() => {
+                    this.textContent = 'Null Systems';
+                    this.style.color = '#d4af37';
+                    this.classList.remove('glitching');
+                    isGlitched = true;
+                    
+                    const link = document.createElement('a');
+                    link.href = 'https://sophiathekitty.github.io/GridDB/index.html';
+                    link.target = '_blank';
+                    link.className = 'glitch-text';
+                    link.style.color = '#d4af37';
+                    link.style.textDecoration = 'none';
+                    link.textContent = 'Null Systems';
+                    
+                    this.parentNode.replaceChild(link, this);
+                }, 500);
+            }
+        });
+    </script>
+
+    <style>
+        /* Additional styles for rewards page */
+        .page-header {
+            background: var(--gradient-navy);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--gold-primary);
+        }
+
+        .rewards-dashboard {
+            padding: 4rem 0;
+            background: var(--cream);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .status-card, .points-card, .actions-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--gold-light);
+            transition: all 0.3s ease;
+        }
+
+        .status-card:hover, .points-card:hover, .actions-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px var(--shadow-light);
+        }
+
+        .status-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-icon {
+            font-size: 3rem;
+        }
+
+        .status-info h3 {
+            color: var(--navy-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .detail-value {
+            font-weight: bold;
+            color: var(--gold-dark);
+        }
+
+        .points-total {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--gold-primary);
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .progress-bar {
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 25px;
+            height: 10px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            background: var(--gradient-gold);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .action-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            background: var(--cream);
+            border: 1px solid var(--gold-light);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .action-button:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .action-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .programs-section {
+            background: var(--navy-light);
+            color: var(--white);
+            padding: 4rem 0;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: var(--white);
+            color: var(--navy-primary);
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px var(--shadow-medium);
+        }
+
+        .program-card.featured {
+            border-color: var(--gold-primary);
+            background: var(--gradient-gold);
+        }
+
+        .program-card.vip {
+            border-color: var(--gold-dark);
+            background: linear-gradient(135deg, var(--gold-light), var(--white));
+        }
+
+        .program-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--gold-primary);
+            color: var(--navy-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .program-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .program-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .program-benefits li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .program-benefits li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold-primary);
+            font-weight: bold;
+        }
+
+        .program-button, .reward-button {
+            background: var(--gradient-gold);
+            color: var(--navy-primary);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .reward-button.secondary {
+            background: transparent;
+            color: var(--gold-primary);
+            border: 2px solid var(--gold-primary);
+        }
+
+        .program-button:hover, .reward-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--shadow-medium);
+        }
+
+        .data-section {
+            background: var(--cream);
+            padding: 4rem 0;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .data-card, .privacy-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--gold-light);
+        }
+
+        .data-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .data-value {
+            font-weight: bold;
+            color: var(--gold-dark);
+        }
+
+        .data-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .data-button {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--gold-primary);
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: var(--gold-primary);
+        }
+
+        .data-button.danger {
+            border-color: #f44336;
+            color: #f44336;
+        }
+
+        .data-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--shadow-light);
+        }
+
+        .privacy-list {
+            margin-top: 1.5rem;
+        }
+
+        .privacy-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .privacy-icon {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .data-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>
